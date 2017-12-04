@@ -23,8 +23,20 @@ public class CoinConverter {
 	private static CoinConverter coinConverter;
 	private static Properties properties;
 	
+	
 	/* Private constructor --> class is singleton */
 	private CoinConverter() {}
+		
+	/* Returns the single instance of this class */
+	public static CoinConverter getInstance()
+	{		
+		if (coinConverter == null) {
+			coinConverter = new CoinConverter();
+			loadCoinValues();
+		}
+		
+		return coinConverter;		
+	}
 	
 
 	/* Method to get properties from a file. */
@@ -37,17 +49,5 @@ public class CoinConverter {
 			properties.setProperty("eur2any", "1.0");
 		}
 		return properties;
-	}
-	
-	
-	/* Returns the single instance of this class */
-	public static CoinConverter getInstance()
-	{		
-		if (coinConverter == null) {
-			coinConverter = new CoinConverter();
-			loadCoinValues();
-		}		
-		
-		return coinConverter;		
 	}
 }
