@@ -2,14 +2,9 @@ package model.properties;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.OutputStream;
-import java.net.URL;
 import java.util.Properties;
-
-import com.sun.glass.ui.TouchInputSupport;
 
 
 /**
@@ -18,7 +13,6 @@ import com.sun.glass.ui.TouchInputSupport;
  * @Project munten
  * @Doel Read coin values from file and convert coin values
  */
-
 public class CoinConverter {
 	private static CoinConverter coinConverter;
 	private static Properties properties;
@@ -33,8 +27,7 @@ public class CoinConverter {
 		if (coinConverter == null) {
 			coinConverter = new CoinConverter();
 			loadCoinValues();
-		}
-		
+		}		
 		return coinConverter;		
 	}
 	
