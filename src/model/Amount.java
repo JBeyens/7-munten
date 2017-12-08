@@ -1,22 +1,27 @@
 package model;
 
+import model.properties.CoinSetting;
+
 public class Amount {
-
-	private double amountNumber;
-	private String coin;
+	// MEMBERS
+	private double amountNumber = 0;
+	private String coin = CoinSetting.DEFAULTCOIN;
 	
-
+	
+	// CONSTRUCTOR
+	public Amount() {
+	}
+	
+	
+	// METHODS
 	/* Amount  getter & setter */
-	public double getAmountNumber() {
+	public double getAmount() {
 		return amountNumber; }
-	public void setAmountNumber(double amountNumber) {
+	public void setAmount(double amountNumber) {
 		this.amountNumber = amountNumber; }
 	
 
 	/* Coin  getter & setter */
 	public String getCoin() {
-		return coin; }
-	public void setCoin(String coin) {
-		this.coin = coin; }	
-	
+		return coin; }		
 }
