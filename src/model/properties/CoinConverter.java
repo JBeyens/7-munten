@@ -26,14 +26,15 @@ public class CoinConverter {
 	{		
 		if (coinConverter == null) {
 			coinConverter = new CoinConverter();
-			loadCoinValues();
+			coinConverter.loadCoinValues();
 		}		
+		
 		return coinConverter;		
 	}
 	
 
 	/* Method to get properties from a file. */
-	private static Properties loadCoinValues() {	
+	private Properties loadCoinValues() {	
 		File file = new File("./model/properties/coins.properties");						
 		try(InputStream is = new FileInputStream(file)){
 			properties.load(is);
@@ -42,5 +43,10 @@ public class CoinConverter {
 			properties.setProperty("eur2any", "1.0");
 		}
 		return properties;
+	}
+	
+	
+	public double getConversionFactor(String fromCoin, String toCoin) {
+		return 0;
 	}
 }
