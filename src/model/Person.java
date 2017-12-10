@@ -1,13 +1,13 @@
 package model;
 
 import model.amount.AmountProvider;
-import model.amount.AmountReporter;
+import model.amount.AmountOfCoins;
 
 public class Person {
 	// MEMBERS
 	private String name;
 	private Nationality nationality;
-	private AmountProvider amount;
+	private AmountProvider amountOfCoins;
 	
 	
 	// CONSTRUCTOR
@@ -17,7 +17,7 @@ public class Person {
 	public Person(String name, Nationality nationality) {
 		super();
 		this.name = name;
-		this.amount = new AmountReporter();
+		this.amountOfCoins = new AmountOfCoins(nationality.getCoin());
 		this.nationality = nationality;
 	}
 	
@@ -27,25 +27,25 @@ public class Person {
 	public String getName() {
 		return name; 
 	}
-	public void setName(String name) {
-		this.name = name; 
+	public void setName(String newName) {
+		name = newName; 
 	}
 	
 	/* Nationality  getter & setter
-	 * (upon changing nationality, the amount of money possibly has to be recalculated) */
+	 * (upon changing nationality, the coin in the amount of coins must be changed as well) */
 	public Nationality getNationality() {
 		return nationality;	
 	}
-	public void setNationality(Nationality nationaliteit) {
-		this.nationality = nationaliteit;
-		amount.setForeignCoin(nationaliteit.getCoin());
+	public void setNationality(Nationality newNationality) {
+		amountOfCoins.setCoin(newNationality.getCoin());
+		this.nationality = newNationality;
 	}
 	
 	/* Amount getter & setter (amount is set with the national currency) */
-	public double getAmount() {
-		return amount.getAmountInForeignCoin(); 
+	public double getAmountInNationalCoin() {
+		return amountOfCoins.getAmountInCoin(nationality.getCoin()); 
 	}
-	public void setAmount(double value) {
-		amount.setAmountInForeignCoin(value, getNationality().getCoin());
+	public void setAmountInNationalCoin(double value) {
+		amountOfCoins.setAmountInCoin(value, nationality.getCoin());;
 	}
 }

@@ -4,7 +4,7 @@ public class Nationality {
 
 	private String nationality;
 	private String language;
-	private String coin;
+	private Coin coin;
 	
 	
 	/* Nationality  getter & setter */
@@ -22,9 +22,9 @@ public class Nationality {
 	
 	
 	/* Coin  getter & setter */
-	public String getCoin() {
+	public Coin getCoin() {
 		return coin; }
-	public void setCoin(String coin) {
+	public void setCoin(Coin coin) {
 		this.coin = coin; }	
 
 }

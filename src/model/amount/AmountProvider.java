@@ -1,14 +1,13 @@
 package model.amount;
 
+import model.Coin;
+
 public interface AmountProvider {
 
-	public double getAmountInDefaultCoin();
-	public void setAmountInDefaultCoin(double value);
+	public double getAmount();
+	public double getAmountInCoin(Coin coin);
+	public void setAmountInCoin(double value, Coin coin);
 	
-	public double getAmountInForeignCoin();
-	public void setAmountInForeignCoin(double value, String coin);
-	
-	public String getDefaultCoin();
-	public String getForeignCoin();
-	public void setForeignCoin(String coin);
+	public Coin getCoin();
+	public void setCoin(Coin coin);
 }
