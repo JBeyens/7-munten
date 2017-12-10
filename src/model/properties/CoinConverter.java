@@ -40,13 +40,35 @@ public class CoinConverter {
 			properties.load(is);
 		}	
 		catch (IOException ex) {
-			properties.setProperty("eur2any", "1.0");
+			// TODO: Report issue
 		}
 		return properties;
 	}
 	
-	
+	/* Method to return the conversionfactor between 2 coins. 
+	 * Returns 1 if any of the coins are not found... */
 	public double getConversionFactor(String fromCoin, String toCoin) {
-		return 1;
+		Double fromValue = tryParseDouble(properties.getProperty(fromCoin));
+		Double toValue = tryParseDouble(properties.getProperty(toCoin));
+		
+		if (fromValue == null || toValue == null)
+			return 1;
+		
+		return toValue / fromValue;
+	}
+	
+	/* Method to parse integer to Double and return null if parse failed on NumberFormatException. */
+	private Double tryParseDouble(String value) {
+		if (value == null)
+			return null;
+		 
+		Double returnValue;
+		try {
+			returnValue = Double.parseDouble(value);
+		} catch (NumberFormatException nfe) {
+			returnValue = null; // or null if that is your preference
+		}
+		
+		  return returnValue;
 	}
 }
