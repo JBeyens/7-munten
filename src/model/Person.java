@@ -4,7 +4,7 @@ public class Person {
 	// MEMBERS
 	private String name;
 	private Nationality nationality;
-	private AmountReporter amount;
+	private AmountProvider amount;
 	
 	
 	// CONSTRUCTOR
