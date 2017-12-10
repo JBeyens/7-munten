@@ -6,8 +6,9 @@ public interface AmountProvider {
 	public void setAmountInDefaultCoin(double value);
 	
 	public double getAmountInForeignCoin();
-	public void setAmountInForeignCoin(double value);
+	public void setAmountInForeignCoin(double value, String coin);
 	
 	public String getDefaultCoin();
 	public String getForeignCoin();
+	public void setForeignCoin(String coin);
 }
