@@ -1,5 +1,8 @@
 package model;
 
+import model.amount.AmountProvider;
+import model.amount.AmountReporter;
+
 public class Person {
 	// MEMBERS
 	private String name;

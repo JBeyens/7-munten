@@ -1,4 +1,4 @@
-package model;
+package model.amount;
 
 import model.properties.CoinConverter;
 
@@ -43,12 +43,12 @@ public class AmountReporter implements AmountProvider{
 		setAmountInDefaultCoin(value * foreignToDefaultFactor); 
 	}
 
-	/* Getters for the coin. If no foreign coin is set, the default coin will always be returned 
-	 * */
+	/* Getters for the default coin.  */
 	@Override
 	public String getDefaultCoin() {
 		return amount.getCoin();
 	}
+	/* Getter for foreign coin. If it is not set, return the defualt coin. 	 */
 	@Override
 	public String getForeignCoin() {
 		boolean isCurrentCoinSet = currentCoin != null && currentCoin.trim().length() > 0;
@@ -58,10 +58,11 @@ public class AmountReporter implements AmountProvider{
 		
 		return currentCoin;
 	}
+	/* Setter for the foreign coin. Upon doing this, the conversionfactors are recalculated. */
 	@Override
 	public void setForeignCoin(String coin) {
-		// TODO: Check if coin exists in CoinConverter
-		// TODO: Implement coin factors
-		// TODO: Set foreign coin
+		defaultToForeignFactor = converter.getConversionFactor(amount.getCoin(), coin);
+		foreignToDefaultFactor = converter.getConversionFactor(coin, amount.getCoin());
+		currentCoin = coin;
 	}
 }

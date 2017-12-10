@@ -1,4 +1,4 @@
-package model;
+package model.amount;
 
 import model.properties.CoinSetting;
 

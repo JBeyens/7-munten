@@ -1,4 +1,4 @@
-package model;
+package model.amount;
 
 public interface AmountProvider {
 
