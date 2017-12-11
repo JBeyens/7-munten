@@ -6,6 +6,7 @@ import model.amount.AmountAdapter;
 public class Person {
 	// MEMBERS
 	private String name;
+	private Amount2 wealth; // Amount of coins this person represented in 'Default Coin'
 	private Nationality nationality;
 	private AmountProvider amountOfCoins;
 	
@@ -44,6 +45,9 @@ public class Person {
 	/* Amount getter & setter (amount is set with the national currency) */
 	public double getAmountInNationalCoin() {
 		return amountOfCoins.getAmountInCoin(nationality.getCoin()); 
+	}
+	public double getAmountInGivenCoin(Coin coin) {
+		return amountOfCoins.getAmountInCoin(coin); 
 	}
 	public void setAmountInNationalCoin(double value) {
 		amountOfCoins.setAmountInCoin(value, nationality.getCoin());;

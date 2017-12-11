@@ -10,7 +10,7 @@ public class AmountAdapter implements AmountProvider{
 
 	// CONSTRUCTOR
 	public AmountAdapter(Coin coin) {
-		amount = new Amount(coin);
+		amount = new Amount();
 		setCurrentCoin(coin);
 	}
 
