@@ -6,9 +6,8 @@ import model.amount.AmountAdapter;
 public class Person {
 	// MEMBERS
 	private String name;
-	private Amount2 wealth; // Amount of coins this person represented in 'Default Coin'
 	private Nationality nationality;
-	private AmountProvider amountOfCoins;
+	private AmountProvider amountAdapter;
 	
 	
 	// CONSTRUCTOR
@@ -16,10 +15,9 @@ public class Person {
 	 * Generates the person based on a nationality & name
 	 */
 	public Person(String name, Nationality nationality) {
-		super();
 		this.name = name;
-		this.amountOfCoins = new AmountAdapter(nationality.getCoin());
 		this.nationality = nationality;
+		this.amountAdapter = new AmountAdapter();
 	}
 	
 	
@@ -38,18 +36,21 @@ public class Person {
 		return nationality;	
 	}
 	public void setNationality(Nationality newNationality) {
-		amountOfCoins.setCurrentCoin(newNationality.getCoin());
 		this.nationality = newNationality;
 	}
 	
 	/* Amount getter & setter (amount is set with the national currency) */
 	public double getAmountInNationalCoin() {
-		return amountOfCoins.getAmountInCoin(nationality.getCoin()); 
+		amountAdapter = new AmountAdapter();
+		return amountAdapter.getAmountInCoin(nationality.getCoin()); 
 	}
 	public double getAmountInGivenCoin(Coin coin) {
-		return amountOfCoins.getAmountInCoin(coin); 
+		return amountAdapter.getAmountInCoin(coin); 
 	}
 	public void setAmountInNationalCoin(double value) {
-		amountOfCoins.setAmountInCoin(value, nationality.getCoin());;
+		amountAdapter.setAmountInCoin(value, nationality.getCoin());
+	}
+	public void setAmountInGivenCoin(double value, Coin coin) {
+		amountAdapter.setAmountInCoin(value, coin);
 	}
 }
