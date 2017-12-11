@@ -1,0 +1,135 @@
+package model.properties;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.util.HashSet;
+import java.util.Properties;
+
+import model.Coin;
+
+/**
+ * @Author Jef Beyens & Ben Vandevorst
+ * @Datum 4/12/2017
+ * @Project munten
+ * @Doel Read coin values from file and convert coin values
+ */
+public class CoinLoader {
+	private static CoinLoader objectOfThisClass;
+	private static HashSet<Coin> coins;
+	private static Coin defaultCoin;
+	
+	
+	/* Private constructor --> class is singleton */
+	private CoinLoader() {}
+		
+	/* Returns the single instance of this class */
+	public static CoinLoader getInstance()
+	{		
+		if (objectOfThisClass == null) {
+			objectOfThisClass = new CoinLoader();
+			objectOfThisClass.loadCoins();
+		}		
+		
+		return objectOfThisClass;		
+	}
+	
+	public HashSet<Coin> getCoins() {
+		return coins;
+	}
+	public Coin getDefaultCoin() {
+		return defaultCoin;
+	} 
+
+	/* Method to get properties from a file. */
+	private void loadCoins() {		
+		File file = new File(DefaultSettings.PROPERTIES_PATH);
+
+		if(!ensureFileExists(file))
+			return;	
+		
+		Properties properties = loadProperties(file);
+		
+		boolean first = false;
+		for (String key : properties.stringPropertyNames()) 
+		{
+			String value = properties.getProperty(key);
+			
+			if (first && key.toLowerCase() == DefaultSettings.DEFAULTCOIN_NAME.toLowerCase()) 
+			{
+				defaultCoin = new Coin(value, 1);
+				first = false;
+				continue;
+			}
+			
+			Double number = TryParseDouble(value);	
+			if (number == null)
+			{
+				// TODO: JLog error invalid number for 'key' & 'value' 
+				continue;
+			}
+			
+			coins.add(new Coin(key, number));
+		}
+	}
+	
+	private boolean ensureFileExists(File file) 
+	{
+		if (file.exists())
+			return true;
+			
+		try (OutputStream out = new FileOutputStream(file))
+		{		
+			// Create new file based on absolute path
+			if (file.getParentFile() != null)
+				file.getParentFile().mkdirs(); // Will create missing folders if necessary
+
+			// Try to generate the missing properties file
+			file.createNewFile();
+			
+			Properties properties = new Properties();
+			properties.setProperty(DefaultSettings.DEFAULTCOIN_NAME, DefaultSettings.DEFAULTCOIN);
+
+			// Write output
+			
+			properties.store(out, null);
+			
+			return true;
+		}
+		catch (IOException e)
+		{
+			// TODO: Report error JLog
+			return false;
+		}
+	}
+
+	private Properties loadProperties(File file)
+	{
+		Properties properties = new Properties();
+		try(InputStream is = new FileInputStream(file))
+		{
+			properties.load(is);
+			return properties;
+		}	
+		catch (IOException ex) 
+		{
+			// TODO: Report error JLog
+			return new Properties();
+		}
+	}
+	
+	public static Double TryParseDouble(String someText) 
+	{
+		try 
+		{
+		      return Double.parseDouble(someText);
+		}
+		catch (NumberFormatException ex) 
+		{
+		      return null;
+		}
+	}
+}

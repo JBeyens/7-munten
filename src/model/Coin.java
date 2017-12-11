@@ -6,6 +6,13 @@ public class Coin {
 	double valuePerDefaultCoin;
 	
 	
+	// CONSTRUCTOR
+	public Coin(String name, double valuePerDefaultCoin) 
+	{
+		this.name = name;
+		this.valuePerDefaultCoin = valuePerDefaultCoin;
+	}
+	
 	// METHODS
 	/* Getter & Setter for 'name' */
 	public String getName() {
