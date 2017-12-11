@@ -6,6 +6,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.io.PrintWriter;
 import java.util.HashSet;
 import java.util.Properties;
 
@@ -90,12 +91,19 @@ public class CoinLoader {
 			// Try to generate the missing properties file
 			file.createNewFile();
 			
+
+			// Fill in the properties file:
+			// TODO: 
+			PrintWriter pw = new PrintWriter(out);
+			pw.println(DefaultSettings.DEFAULTCOIN_ADVISE);
 			Properties properties = new Properties();
 			properties.setProperty(DefaultSettings.DEFAULTCOIN_NAME, DefaultSettings.DEFAULTCOIN);
-
-			// Write output
-			
 			properties.store(out, null);
+			pw.println(DefaultSettings.OTHER_COINS_ADVISE);
+			properties.clear();
+			properties.setProperty(DefaultSettings.OTHER_COIN, DefaultSettings.OTHER_COIN_VALUE);
+			properties.store(out, null);
+			pw.close(); out.close();
 			
 			return true;
 		}
