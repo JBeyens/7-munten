@@ -37,10 +37,13 @@ public class Coins {
 
 	/* Method to get properties from a file. */
 	private void loadCoins() {	
+		// Initialization
+		Properties properties = new Properties();	
+		File file = new File(DefaultSettings.PROPERTIES_PATH);
+
+		if (!file.exists() || file.isDirectory())
 		// TODO: Finish this method...
-		Properties properties = new Properties();
-	
-		File file = new File("./model/properties/coins.properties");						
+		
 		try(InputStream is = new FileInputStream(file)){
 			properties.load(is);
 		}	

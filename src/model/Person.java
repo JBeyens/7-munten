@@ -1,7 +1,7 @@
 package model;
 
 import model.amount.AmountProvider;
-import model.amount.AmountOfCoins;
+import model.amount.AmountAdapter;
 
 public class Person {
 	// MEMBERS
@@ -17,7 +17,7 @@ public class Person {
 	public Person(String name, Nationality nationality) {
 		super();
 		this.name = name;
-		this.amountOfCoins = new AmountOfCoins(nationality.getCoin());
+		this.amountOfCoins = new AmountAdapter(nationality.getCoin());
 		this.nationality = nationality;
 	}
 	
@@ -37,7 +37,7 @@ public class Person {
 		return nationality;	
 	}
 	public void setNationality(Nationality newNationality) {
-		amountOfCoins.setCoin(newNationality.getCoin());
+		amountOfCoins.setCurrentCoin(newNationality.getCoin());
 		this.nationality = newNationality;
 	}
 	
