@@ -25,4 +25,9 @@ public class Coin {
 		return valuePerDefaultCoin;	}
 	public void setValuePerDefaultCoin(double valuePerDefaultCoin) {
 		this.valuePerDefaultCoin = valuePerDefaultCoin;	}
+	
+	@Override
+	public String toString(){
+		return name + valuePerDefaultCoin;
+	}
 }

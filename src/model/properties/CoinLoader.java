@@ -40,6 +40,10 @@ public class CoinLoader {
 	}
 	
 	public HashSet<Coin> getCoins() {
+		if (objectOfThisClass == null) {
+			objectOfThisClass = new CoinLoader();
+			objectOfThisClass.loadCoins();
+		}
 		return coins;
 	}
 	public Coin getDefaultCoin() {
