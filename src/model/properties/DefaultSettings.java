@@ -1,5 +1,13 @@
 package model.properties;
 
+
+/**
+ * 	@Author Ben Vandevorst & Jef Beyens
+	@Datum 15/12/2017
+	@Project Munten
+	@Doel Holding literal strings
+ */
+
 public final class DefaultSettings {
 	public static final String PROPERTIES_PATH = "./model/properties/coins.properties";
 	public static final String DEFAULTCOIN = "EUR";

@@ -1,5 +1,13 @@
 package model;
 
+
+/**
+ * 	@Author Ben Vandevorst & Jef Beyens
+	@Datum 15/12/2017
+	@Project Munten
+	@Doel POJO class to hold specific country information
+ */
+
 public class Nationality {
 
 	private String nationality;

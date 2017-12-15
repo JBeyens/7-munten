@@ -2,6 +2,14 @@ package model.amount;
 
 import model.Coin;
 
+
+/**
+ * 	@Author Ben Vandevorst & Jef Beyens
+	@Datum 15/12/2017
+	@Project Munten
+	@Doel Adapter for converting values
+ */
+
 public class AmountAdapter implements AmountProvider{
 	
 	// MEMBERS

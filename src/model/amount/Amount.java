@@ -1,5 +1,13 @@
 package model.amount;
 
+
+/**
+ * 	@Author Ben Vandevorst & Jef Beyens
+	@Datum 15/12/2017
+	@Project Munten
+	@Doel POJO class
+ */
+
 public class Amount {	
 	
 	// MEMBERS
@@ -19,4 +27,6 @@ public class Amount {
 	public void setAmount(double newAmount) {
 		this.amountOfCoins = newAmount;
 	}
+	
+	
 }

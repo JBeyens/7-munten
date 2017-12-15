@@ -15,9 +15,10 @@ import model.Coin;
 /**
  * @Author Jef Beyens & Ben Vandevorst
  * @Datum 4/12/2017
- * @Project munten
+ * @Project Munten
  * @Doel Read coin values from file and convert coin values
  */
+
 public class CoinLoader {
 	private static CoinLoader objectOfThisClass;
 	private static HashSet<Coin> coins;

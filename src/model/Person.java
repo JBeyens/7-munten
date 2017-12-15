@@ -3,6 +3,14 @@ package model;
 import model.amount.AmountProvider;
 import model.amount.AmountAdapter;
 
+
+/**
+ * 	@Author Ben Vandevorst & Jef Beyens
+	@Datum 15/12/2017
+	@Project Munten
+	@Doel POJO class with reference to Interface adapter
+ */
+
 public class Person {
 	// MEMBERS
 	private String name;
