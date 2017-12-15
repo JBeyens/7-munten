@@ -29,7 +29,7 @@ public class CoinLoader {
 	private CoinLoader() {}
 		
 	/* Returns the single instance of this class */
-	public static CoinLoader getInstance()
+	public static CoinLoader getInstance() throws IOException
 	{		
 		if (objectOfThisClass == null) {
 			objectOfThisClass = new CoinLoader();
@@ -39,7 +39,7 @@ public class CoinLoader {
 		return objectOfThisClass;		
 	}
 	
-	public HashSet<Coin> getCoins() {
+	public HashSet<Coin> getCoins() throws IOException {
 		if (objectOfThisClass == null) {
 			objectOfThisClass = new CoinLoader();
 			objectOfThisClass.loadCoins();
@@ -51,11 +51,11 @@ public class CoinLoader {
 	} 
 
 	/* Method to get properties from a file. */
-	private void loadCoins() {		
+	private void loadCoins() throws IOException {		
 		File file = new File(DefaultSettings.PROPERTIES_PATH);
 
 		if(!ensureFileExists(file))
-			return;	
+			file.createNewFile();
 		
 		Properties properties = loadProperties(file);
 		
