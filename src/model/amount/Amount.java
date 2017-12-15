@@ -1,6 +1,5 @@
 package model.amount;
 
-
 /**
  * 	@Author Ben Vandevorst & Jef Beyens
 	@Datum 15/12/2017

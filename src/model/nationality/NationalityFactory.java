@@ -6,16 +6,16 @@ public class NationalityFactory {
 		Nationality n = null;
 
 		switch (nationality) {
-		case "België":
-			n = new Belg();
+		case "Belgium":
+			n = new Belgian();
 			break;
 
-		case "Duitsland":
-			n = new Duitsland();
+		case "Germany":
+			n = new German();
 			break;
 
-		case "Frankrijk":
-			n = new Frankrijk();
+		case "France":
+			n = new Frenchman();
 			break;
 		}
 
