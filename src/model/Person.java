@@ -1,6 +1,7 @@
 package model;
 
 import model.amount.AmountProvider;
+import model.nationality.Nationality;
 import model.amount.AmountAdapter;
 
 
