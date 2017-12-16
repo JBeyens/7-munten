@@ -31,7 +31,7 @@ public class TestClass {
 	{		
 		logger.info("Loading the coins...");
 		HashSet<Coin> coinCollection = CoinLoader.getInstance().getCoins();
-		logger.info("Loading the generator for nationalities");
+		logger.info("Loading the nationalities...");
 		return new NationalityFactory(coinCollection);
 	}
 
