@@ -3,7 +3,7 @@ package model.nationality;
 import model.Coin;
 import model.Person;
 
-public class Nationality {
+public abstract class Nationality {
 	private Coin coin;
 
 	public Nationality(Coin nationalCoin)
