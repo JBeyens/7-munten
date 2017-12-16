@@ -22,8 +22,8 @@ import model.Coin;
  */
 
 public class CoinLoader {
-	final static Logger logger = Logger.getLogger("Log");
-	static String className = "";
+	private final static Logger logger = Logger.getLogger("Log");
+	private static String className = "";
 	private static CoinLoader objectOfThisClass;
 	private static HashSet<Coin> coins;
 	private static Coin defaultCoin;
@@ -127,10 +127,10 @@ public class CoinLoader {
 			PrintWriter pw = new PrintWriter(out);
 			Properties properties = new Properties();
 			logger.info(className + "=> " + DefaultSettings.DEFAULTCOIN_NAME + " = " + DefaultSettings.DEFAULTCOIN + DefaultSettings.DEFAULTCOIN_ADVISE);
-			logger.info(className + "=> " + DefaultSettings.OTHER_COIN + " = " + DefaultSettings.OTHER_COIN_VALUE + DefaultSettings.OTHER_COINS_ADVISE);
+			logger.info(className + "=> " + DefaultSettings.OTHER_COIN1 + " = " + DefaultSettings.OTHER_COIN1_VALUE + DefaultSettings.OTHER_COINS_ADVISE);
 			logger.debug(className + "Properties file: writing properties to file");
 			properties.setProperty(DefaultSettings.DEFAULTCOIN_NAME, DefaultSettings.DEFAULTCOIN);
-			properties.setProperty(DefaultSettings.OTHER_COIN, DefaultSettings.OTHER_COIN_VALUE);
+			properties.setProperty(DefaultSettings.OTHER_COIN1, DefaultSettings.OTHER_COIN1_VALUE);
 			properties.store(out, null);
 			logger.debug(className + "Properties file: writing advise to file");
 			pw.println(DefaultSettings.DEFAULTCOIN_ADVISE);
