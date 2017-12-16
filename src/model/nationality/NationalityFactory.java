@@ -51,6 +51,7 @@ public class NationalityFactory {
 		return nationalityDictionary.get(nationality);
 	}
 	
+	// Gets a random nationality by picking a random value from the enumeration
 	public Nationality getRandomNationality()
 	{
 		NationalitiesEnum randomNationality = NationalitiesEnum.getRandomNationality();

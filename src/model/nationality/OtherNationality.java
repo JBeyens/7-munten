@@ -12,6 +12,6 @@ public class OtherNationality extends Nationality {
 	// METHODS
 	@Override
 	public String toString(Person person) {
-		return "I'm from some other country. My wealth is " + super.toString(person) + ".";
+		return "My name is " + person.getName() + ". I'm from some other country. My wealth is " + super.toString(person) + ".";
 	}
 }

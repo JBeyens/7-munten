@@ -12,6 +12,6 @@ public class Swiss extends Nationality {
 	// METHODS
 	@Override
 	public String toString(Person person) {
-		return "Hi, ich bin Schweizer und mein Vermögen ist " + super.toString(person) + ".";
+		return "Hi, mein Name ist " + person.getName() + ", ich bin Schweizer und mein Vermögen ist " + super.toString(person) + ".";
 	}
 }

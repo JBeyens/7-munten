@@ -12,6 +12,6 @@ public class Norwegian extends Nationality {
 	// METHODS
 	@Override
 	public String toString(Person person) {
-		return "Hei, jeg er norsk og rikdom er " + super.toString(person) + ".";
+		return "Hei, jeg heter " + person.getName() + ", jeg er norsk og rikdom er " + super.toString(person) + ".";
 	}
 }

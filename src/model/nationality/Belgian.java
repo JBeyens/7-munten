@@ -12,6 +12,6 @@ public class Belgian extends Nationality {
 	// METHODS
 	@Override
 	public String toString(Person person) {
-		return "Hey, ik ben een Belg en mijn vermogen is " + super.toString(person) + ".";
+		return "Hallo, mijn naam is " + person.getName() + ", ik ben een Belg en mijn vermogen is " + super.toString(person) + ".";
 	}
 }

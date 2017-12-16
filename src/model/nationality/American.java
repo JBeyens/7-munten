@@ -12,6 +12,6 @@ public class American extends Nationality {
 	// METHODS
 	@Override
 	public String toString(Person person) {
-		return "Hi, I'm an American and my wealth is " + super.toString(person) + ".";
+		return "Hi, my name is " + person.getName() + ", I'm an American and my wealth is " + super.toString(person) + ".";
 	}
 }

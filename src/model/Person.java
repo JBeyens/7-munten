@@ -50,7 +50,6 @@ public class Person {
 	
 	/* Amount getter & setter (amount is set with the national currency) */
 	public double getAmountInNationalCoin() {
-		amountAdapter = new AmountAdapter();
 		return amountAdapter.getAmountInCoin(nationality.getCoin()); 
 	}
 	public double getAmountInGivenCoin(Coin coin) {
@@ -61,5 +60,11 @@ public class Person {
 	}
 	public void setAmountInGivenCoin(double value, Coin coin) {
 		amountAdapter.setAmountInCoin(value, coin);
+	}
+	
+	// METHODS
+	@Override
+	public String toString() {
+		return getNationality().toString(this);
 	}
 }

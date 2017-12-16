@@ -1,6 +1,6 @@
 package model.nationality;
 
-import java.util.Random;
+import test.Utility;
 
 // Enum of possible nationalities
 public enum NationalitiesEnum 
@@ -17,7 +17,6 @@ public enum NationalitiesEnum
 	 **/
 	public static NationalitiesEnum getRandomNationality()
 	{
-		Random random = new Random();
-		return values()[random.nextInt(values().length)];
+		return values()[Utility.RANDOM.nextInt(values().length)];
 	}
 }
