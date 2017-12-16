@@ -11,11 +11,16 @@ import model.Coin;
 import model.properties.CoinLoader;
 
 public class TestClass {
-	private static Logger log = Logger.getLogger("TestClassLogger");
+	private static Logger log = Logger.getLogger("Log");
 
 	public static void main(String[] args) {
+		// Configure log4j settings:
 		DOMConfigurator.configure("log4j.xml");
+		
+		// Set log4j level to log
 		log.setLevel(Level.ALL);
+		
+		// Load the coins
 		CoinLoader coinLoader;
 		try {
 			coinLoader = CoinLoader.getInstance();

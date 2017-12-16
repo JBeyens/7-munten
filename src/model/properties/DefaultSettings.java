@@ -12,7 +12,7 @@ import org.apache.log4j.Level;
 public final class DefaultSettings {
 	public static final Level LOGGING_LEVEL = Level.ALL;
 	
-	public static final String PROPERTIES_PATH = "./model/properties/coins.properties";
+	public static final String PROPERTIES_PATH = "bin/model/properties/coins.properties";
 	public static final String DEFAULTCOIN = "EUR";
 	public static final String DEFAULTCOIN_NAME = "defaultCoin";
 	public static final String DEFAULTCOIN_ADVISE = "# 'defaultCoin' must be set mandatory\r\n"

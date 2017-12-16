@@ -17,33 +17,43 @@ import model.Coin;
  * @Author Jef Beyens & Ben Vandevorst
  * @Datum 4/12/2017
  * @Project Munten
- * @Doel Read coin values from file and convert coin values
+ * @Doel Read coin values from file
  */
 
 public class CoinLoader {
-	final static Logger logger = Logger.getLogger("TestClassLogger");
+	final static Logger logger = Logger.getLogger("Log");
+	static String className = "";
 	private static CoinLoader objectOfThisClass;
 	private static HashSet<Coin> coins;
 	private static Coin defaultCoin;
 	
 	
 	/* Private constructor --> class is singleton */
-	private CoinLoader() {}
+	private CoinLoader() {
+		coins = new HashSet<>();
+	}
 		
 	/* Returns the single instance of this class */
 	public static CoinLoader getInstance() throws IOException
 	{		
-		if (objectOfThisClass == null) {
-			objectOfThisClass = new CoinLoader();
-			objectOfThisClass.loadCoins();
-		}		
+		if (objectOfThisClass != null) {
+			logger.debug(className + "Existing object of this class was returned");
+			return objectOfThisClass;
+		}
 		
+		objectOfThisClass = new CoinLoader();
+		
+		// Log4j
+		className = objectOfThisClass.getClass().getName() + " - ";
+		logger.debug(className + "Single object of this class was initialized.");
+		
+		objectOfThisClass.loadCoins();		
 		return objectOfThisClass;		
 	}
 	
 	public HashSet<Coin> getCoins() throws IOException {
 		if (objectOfThisClass == null) {
-			logger.info("Creating new instance of 'CoinLoader' class.");
+			logger.debug("Creating new instance of 'CoinLoader' class.");
 			objectOfThisClass = new CoinLoader();
 			objectOfThisClass.loadCoins();
 		}
@@ -56,11 +66,13 @@ public class CoinLoader {
 	/* Method to get properties from a file. */
 	private void loadCoins() throws IOException {		
 		File file = new File(DefaultSettings.PROPERTIES_PATH);
-		logger.info("Inputted path: " + file.getAbsolutePath());
+		logger.info(className + "Reading properties from '" + file.getAbsolutePath() + "'");
 
-		if(!ensureFileExists(file))
-			file.createNewFile();
-		
+		if(!ensureFileExists(file)) {
+			logger.warn(className + "Properties file does not exist. Creating file...");			
+			file.createNewFile(); }
+
+		logger.trace(className + "Loading properties from file:");
 		Properties properties = loadProperties(file);
 		
 		boolean first = false;
@@ -72,16 +84,18 @@ public class CoinLoader {
 			{
 				defaultCoin = new Coin(value, 1);
 				first = false;
+				logger.info(className + "Default coin set to '" + value +"'");
 				continue;
 			}
 			
 			Double number = TryParseDouble(value);	
 			if (number == null)
 			{
-				// TODO: JLog error invalid number for 'key' & 'value' 
+				logger.warn(className + "For property '" + key + "' the value '" + value + "' could not be converted to a number.");
 				continue;
 			}
 			
+			logger.info(className + "For property '" + key + "' the value '" + value + "' has been recognised.");
 			coins.add(new Coin(key, number));
 		}
 	}
