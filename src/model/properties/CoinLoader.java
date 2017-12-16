@@ -141,7 +141,7 @@ public class CoinLoader {
 		}
 		catch (IOException e)
 		{
-			logger.error(className + "Error during creation of new properties file: " + e);
+			logger.error(className + "Error during creation of new properties file...", e);
 			return false;
 		}
 	}
@@ -157,7 +157,7 @@ public class CoinLoader {
 		}	
 		catch (IOException ex) 
 		{
-			logger.error(className + "Error during reading of properties file: " + ex);
+			logger.error(className + "Error during reading of properties file...", ex);
 			return new Properties();
 		}
 	}
