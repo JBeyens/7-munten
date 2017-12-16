@@ -35,7 +35,7 @@ public class CoinLoader {
 	}
 		
 	/* Returns the single instance of this class */
-	public static CoinLoader getInstance() throws IOException
+	public static CoinLoader getInstance()
 	{		
 		if (objectOfThisClass != null) {
 			logger.debug(className + "Existing object of this class was returned");
@@ -52,7 +52,7 @@ public class CoinLoader {
 		return objectOfThisClass;		
 	}
 	
-	public HashSet<Coin> getCoins() throws IOException {
+	public HashSet<Coin> getCoins()  {
 		if (objectOfThisClass == null) {
 			logger.debug("Creating new instance of 'CoinLoader' class.");
 			objectOfThisClass = new CoinLoader();
@@ -65,13 +65,11 @@ public class CoinLoader {
 	} 
 
 	/* Method to get properties from a file. */
-	private void loadCoins() throws IOException {		
+	private void loadCoins() {		
 		File file = new File(DefaultSettings.PROPERTIES_PATH);
 		logger.info(className + "Reading properties from '" + file.getAbsolutePath() + "'");
 
-		if(!ensureFileExists(file)) {
-			logger.warn(className + "Properties file does not exist. Creating file...");			
-			file.createNewFile(); }
+		ensureFileExists(file);
 
 		logger.trace(className + "Loading properties from file:");
 		Properties properties = loadProperties(file);
@@ -108,9 +106,9 @@ public class CoinLoader {
 		if (file.exists()) {
 			logger.debug(className + "The properties file exists.");
 			return true;
-		}
-			
-		logger.debug(className + "The properties file does not exist.");
+		}			
+		
+		logger.warn(className + "Properties file does not exist. Creating file...");	
 		try (OutputStream out = new FileOutputStream(file))
 		{		
 			// Create new file based on absolute path
