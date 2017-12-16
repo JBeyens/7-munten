@@ -1,5 +1,6 @@
 package model.properties;
 
+import org.apache.log4j.Level;
 
 /**
  * 	@Author Ben Vandevorst & Jef Beyens
@@ -9,6 +10,8 @@ package model.properties;
  */
 
 public final class DefaultSettings {
+	public static final Level LOGGING_LEVEL = Level.ALL;
+	
 	public static final String PROPERTIES_PATH = "./model/properties/coins.properties";
 	public static final String DEFAULTCOIN = "EUR";
 	public static final String DEFAULTCOIN_NAME = "defaultCoin";

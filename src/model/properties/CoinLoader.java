@@ -9,6 +9,7 @@ import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.util.HashSet;
 import java.util.Properties;
+import org.apache.log4j.Logger;
 
 import model.Coin;
 
@@ -20,6 +21,7 @@ import model.Coin;
  */
 
 public class CoinLoader {
+	final static Logger logger = Logger.getLogger("TestClassLogger");
 	private static CoinLoader objectOfThisClass;
 	private static HashSet<Coin> coins;
 	private static Coin defaultCoin;
@@ -41,6 +43,7 @@ public class CoinLoader {
 	
 	public HashSet<Coin> getCoins() throws IOException {
 		if (objectOfThisClass == null) {
+			logger.info("Creating new instance of 'CoinLoader' class.");
 			objectOfThisClass = new CoinLoader();
 			objectOfThisClass.loadCoins();
 		}
@@ -53,6 +56,7 @@ public class CoinLoader {
 	/* Method to get properties from a file. */
 	private void loadCoins() throws IOException {		
 		File file = new File(DefaultSettings.PROPERTIES_PATH);
+		logger.info("Inputted path: " + file.getAbsolutePath());
 
 		if(!ensureFileExists(file))
 			file.createNewFile();
