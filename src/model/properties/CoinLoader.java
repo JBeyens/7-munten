@@ -71,7 +71,6 @@ public class CoinLoader {
 
 		ensureFileExists(file);
 
-		logger.trace(className + "Loading properties from file:");
 		Properties properties = loadProperties(file);
 		
 		boolean first = true;

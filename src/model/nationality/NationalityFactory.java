@@ -1,6 +1,7 @@
 package model.nationality;
 
 import java.util.Dictionary;
+import java.util.HashMap;
 import java.util.HashSet;
 
 import org.apache.log4j.Logger;
@@ -10,13 +11,14 @@ import model.properties.DefaultSettings;
 
 public class NationalityFactory {
 	// FIELDS
-	private Dictionary<NationalitiesEnum, Nationality> nationalityDictionary;
+	private HashMap<NationalitiesEnum, Nationality> nationalityDictionary;
 	private final static Logger logger = Logger.getLogger("Log");
 	private static String className = "";
 	
 	public NationalityFactory(HashSet<Coin> coins)
 	{
 		className = this.getClass().getName() + " - ";
+		nationalityDictionary = new HashMap<NationalitiesEnum, Nationality>();
 		logger.debug(className + "Running over Enum of nationalities");
 		for (NationalitiesEnum nationality : NationalitiesEnum.values()) 
 		{
