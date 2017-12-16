@@ -9,6 +9,7 @@ import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.util.HashSet;
 import java.util.Properties;
+
 import org.apache.log4j.Logger;
 
 import model.Coin;
@@ -75,18 +76,20 @@ public class CoinLoader {
 		logger.trace(className + "Loading properties from file:");
 		Properties properties = loadProperties(file);
 		
-		boolean first = false;
+		boolean first = true;
 		for (String key : properties.stringPropertyNames()) 
 		{
 			String value = properties.getProperty(key);
 			
-			if (first && key.toLowerCase() == DefaultSettings.DEFAULTCOIN_NAME.toLowerCase()) 
+			if (first && key.toLowerCase().equals(DefaultSettings.DEFAULTCOIN_NAME.toLowerCase())) 
 			{
 				defaultCoin = new Coin(value, 1);
 				first = false;
 				logger.info(className + "Default coin set to '" + value +"'");
 				continue;
 			}
+			if (first)
+				logger.debug(className + "Property '" + key + "' not recognised as '" + DefaultSettings.DEFAULTCOIN_NAME + "'");
 			
 			Double number = TryParseDouble(value);	
 			if (number == null)
@@ -95,44 +98,50 @@ public class CoinLoader {
 				continue;
 			}
 			
-			logger.info(className + "For property '" + key + "' the value '" + value + "' has been recognised.");
+			logger.info(className + "For property '" + key + "' the value '" + number + "' has been recognised.");
 			coins.add(new Coin(key, number));
 		}
 	}
 	
 	private boolean ensureFileExists(File file) 
 	{
-		if (file.exists())
+		if (file.exists()) {
+			logger.debug(className + "The properties file exists.");
 			return true;
+		}
 			
+		logger.debug(className + "The properties file does not exist.");
 		try (OutputStream out = new FileOutputStream(file))
 		{		
 			// Create new file based on absolute path
-			if (file.getParentFile() != null)
-				file.getParentFile().mkdirs(); // Will create missing folders if necessary
+			if (file.getParentFile() != null) {
+				logger.debug(className + "Ensuring the directory exists or is created if necessary (based on absolute path).");
+				file.getParentFile().mkdirs();
+			}
 
-			// Try to generate the missing properties file
+			logger.info(className + "Creating a new properties file.");
 			file.createNewFile();
 			
 
 			// Fill in the properties file:
-			// TODO: 
 			PrintWriter pw = new PrintWriter(out);
-			pw.println(DefaultSettings.DEFAULTCOIN_ADVISE);
 			Properties properties = new Properties();
+			logger.info(className + "=> " + DefaultSettings.DEFAULTCOIN_NAME + " = " + DefaultSettings.DEFAULTCOIN + DefaultSettings.DEFAULTCOIN_ADVISE);
+			logger.info(className + "=> " + DefaultSettings.OTHER_COIN + " = " + DefaultSettings.OTHER_COIN_VALUE + DefaultSettings.OTHER_COINS_ADVISE);
+			logger.debug(className + "Properties file: writing properties to file");
 			properties.setProperty(DefaultSettings.DEFAULTCOIN_NAME, DefaultSettings.DEFAULTCOIN);
-			properties.store(out, null);
-			pw.println(DefaultSettings.OTHER_COINS_ADVISE);
-			properties.clear();
 			properties.setProperty(DefaultSettings.OTHER_COIN, DefaultSettings.OTHER_COIN_VALUE);
 			properties.store(out, null);
+			logger.debug(className + "Properties file: writing advise to file");
+			pw.println(DefaultSettings.DEFAULTCOIN_ADVISE);
+			pw.println(DefaultSettings.OTHER_COINS_ADVISE);
 			pw.close(); out.close();
 			
 			return true;
 		}
 		catch (IOException e)
 		{
-			// TODO: Report error JLog
+			logger.error(className + "Error during creation of new properties file: " + e);
 			return false;
 		}
 	}
@@ -140,6 +149,7 @@ public class CoinLoader {
 	private Properties loadProperties(File file)
 	{
 		Properties properties = new Properties();
+		logger.debug(className + "Reading properties from file...");
 		try(InputStream is = new FileInputStream(file))
 		{
 			properties.load(is);
@@ -147,7 +157,7 @@ public class CoinLoader {
 		}	
 		catch (IOException ex) 
 		{
-			// TODO: Report error JLog
+			logger.error(className + "Error during reading of properties file: " + ex);
 			return new Properties();
 		}
 	}
@@ -160,6 +170,7 @@ public class CoinLoader {
 		}
 		catch (NumberFormatException ex) 
 		{
+			logger.debug(className + "Could not parse '" + someText + "' to double.");
 		      return null;
 		}
 	}
