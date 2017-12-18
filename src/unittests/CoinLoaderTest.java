@@ -27,7 +27,7 @@ public class CoinLoaderTest {
 	}
 
 	@Test
-	public void test_Reading_Properties_From_Config_File_When_File_Found() {
+	public void test_Reading_Properties_From_Coin_File() {
 		HashSet<Coin> collection = CoinLoader.getInstance().getCoins();
 		
 		assertTrue(coinCollection.equals(collection));
