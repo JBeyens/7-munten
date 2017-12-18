@@ -1,17 +1,17 @@
 package model.nationality;
 
 import model.Coin;
-import model.Person;
+import model.language.LanguageEnum;
 
 public class American extends Nationality {
 	// CONSTRUCTOR
-	public American(Coin americanCoin){
-		super(americanCoin);
+	public American(Coin americanCoin, LanguageEnum language){
+		super(americanCoin, language);
 	}
 
 	// METHODS
 	@Override
-	public String toString(Person person) {
-		return "Hi, my name is " + person.getName() + ", I'm an American and my wealth is " + super.toString(person) + ".";
+	public String toString(String name, Double wealthInNationalCoin) {
+		return "American: " + super.toString(name, wealthInNationalCoin);
 	}
 }

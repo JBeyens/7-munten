@@ -1,6 +1,6 @@
 package model.language;
 
-public enum Language {
+public enum LanguageEnum {
 	DUTCH("Hallo, mijn naam is ", " en mijn vermogen is "),
 	ENGLISH("Hi, my name is ", " and my wealth is "),
 	FRENCH("Bonjour, je m'appelle ", " et ma puissance est "),
@@ -11,7 +11,7 @@ public enum Language {
 	private final String myNameIs;
 	private final String andMyWealthIs;
 	
-	private Language(String myNameIs, String andMyWealthIs) {
+	private LanguageEnum(String myNameIs, String andMyWealthIs) {
 		this.myNameIs = myNameIs;
 		this.andMyWealthIs = andMyWealthIs;
 	}

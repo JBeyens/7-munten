@@ -65,6 +65,6 @@ public class Person {
 	// METHODS
 	@Override
 	public String toString() {
-		return getNationality().toString(this);
+		return getNationality().toString(getName(), amountAdapter.getAmountInCoin(getNationality().getCoin()));
 	}
 }

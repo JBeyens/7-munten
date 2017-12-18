@@ -1,17 +1,17 @@
 package model.nationality;
 
 import model.Coin;
-import model.Person;
+import model.language.LanguageEnum;
 
 public class OtherNationality extends Nationality {
 	// CONSTRUCTOR
-	public OtherNationality(Coin otherCoin){
-		super(otherCoin);
+	public OtherNationality(Coin otherCoin, LanguageEnum language){
+		super(otherCoin, language);
 	}
 
 	// METHODS
 	@Override
-	public String toString(Person person) {
-		return "My name is " + person.getName() + ". I'm from some other country. My wealth is " + super.toString(person) + ".";
+	public String toString(String name, Double wealthInNationalCoin) {
+		return "Unknown nationality: " + super.toString(name, wealthInNationalCoin);
 	}
 }
