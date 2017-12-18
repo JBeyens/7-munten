@@ -37,6 +37,13 @@ public class TestClass {
 	
 	private static void loadNationalityFactory() {		
 		logger.info("Loading the coins...");
+		/**
+		 * CoinLoader will read the coins.properties file from the default path. 
+		 * (default path set in 'model.properties.DefaultSettings')
+		 * If this properties file can not be found (and only then), 
+		 * the default coin and coin values in 'model.properties.DefaultCoins' will be loaded
+		 *  and a coins.properties file will be created.
+		 **/
 		HashSet<Coin> coinCollection = CoinLoader.getInstance().getCoins();
 		logger.info("Loading the nationalities...");
 		nationalityFactory = NationalityFactory.getInstance(coinCollection);
@@ -66,7 +73,6 @@ public class TestClass {
 			Nationality newNationality = nationalityFactory.getNationality(nationality);
 			person.setNationality(newNationality);
 			logger.info(person.toString());
-		}
-		
+		}		
 	}
 }

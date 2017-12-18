@@ -859,3 +859,178 @@ Changing nationality for 1 random person:Otto
 2017-12-18 19:51:14,533 +0100 [main] INFO  (TestClass.java:68) - Hei, jeg heter Otto, jeg er norsk og rikdom er 801.57 nok.
 2017-12-18 19:51:14,533 +0100 [main] INFO  (TestClass.java:65) - Chosen nationality: SWISS
 2017-12-18 19:51:14,533 +0100 [main] INFO  (TestClass.java:68) - Hi, mein Name ist Otto, ich bin Schweizer und mein Vermögen ist 123.57000000000001 chf.
+2017-12-18 22:44:23,351 +0100 [main] INFO  (TestClass.java:39) - Loading the coins...
+2017-12-18 22:44:23,366 +0100 [main] DEBUG (CoinLoader.java:51) - model.properties.CoinLoader - Single object of this class was initialized.
+2017-12-18 22:44:23,366 +0100 [main] INFO  (CoinLoader.java:72) - model.properties.CoinLoader - Reading properties from 'E:\Google Drive\git\7-Munten\bin\model\properties\coins.properties'
+2017-12-18 22:44:23,366 +0100 [main] DEBUG (CoinLoader.java:111) - model.properties.CoinLoader - The properties file exists.
+2017-12-18 22:44:23,366 +0100 [main] DEBUG (CoinLoader.java:157) - model.properties.CoinLoader - Reading properties from file...
+2017-12-18 22:44:23,366 +0100 [main] DEBUG (CoinLoader.java:91) - model.properties.CoinLoader - Property 'gbp' not recognised as 'defaultCoin'
+2017-12-18 22:44:23,366 +0100 [main] INFO  (CoinLoader.java:100) - model.properties.CoinLoader - For property 'gbp' the value '0.84306' has been recognised.
+2017-12-18 22:44:23,366 +0100 [main] DEBUG (CoinLoader.java:91) - model.properties.CoinLoader - Property 'usd' not recognised as 'defaultCoin'
+2017-12-18 22:44:23,366 +0100 [main] INFO  (CoinLoader.java:100) - model.properties.CoinLoader - For property 'usd' the value '1.31774' has been recognised.
+2017-12-18 22:44:23,366 +0100 [main] DEBUG (CoinLoader.java:91) - model.properties.CoinLoader - Property 'nok' not recognised as 'defaultCoin'
+2017-12-18 22:44:23,366 +0100 [main] INFO  (CoinLoader.java:100) - model.properties.CoinLoader - For property 'nok' the value '8.0157' has been recognised.
+2017-12-18 22:44:23,366 +0100 [main] DEBUG (CoinLoader.java:91) - model.properties.CoinLoader - Property 'chf' not recognised as 'defaultCoin'
+2017-12-18 22:44:23,366 +0100 [main] INFO  (CoinLoader.java:100) - model.properties.CoinLoader - For property 'chf' the value '1.2357' has been recognised.
+2017-12-18 22:44:23,366 +0100 [main] DEBUG (CoinLoader.java:91) - model.properties.CoinLoader - Property 'sek' not recognised as 'defaultCoin'
+2017-12-18 22:44:23,366 +0100 [main] INFO  (CoinLoader.java:100) - model.properties.CoinLoader - For property 'sek' the value '8.7332' has been recognised.
+2017-12-18 22:44:23,366 +0100 [main] INFO  (TestClass.java:41) - Loading the nationalities...
+2017-12-18 22:44:23,366 +0100 [main] INFO  (TestClass.java:48) - 
+
+Loading the people... 
+Each person will be given a wealth of 100.0 default coins.
+2017-12-18 22:44:23,366 +0100 [main] DEBUG (CoinLoader.java:43) - model.properties.CoinLoader - Existing object of this class was returned
+2017-12-18 22:44:23,366 +0100 [main] DEBUG (TestClass.java:50) - The default coin is named 'eur' and has a value of '1.0'.
+2017-12-18 22:44:23,366 +0100 [main] DEBUG (NationalityFactory.java:101) - model.nationality.NationalityFactory - Random chosen nationality is 'SWISS'
+2017-12-18 22:44:23,366 +0100 [main] DEBUG (NationalityFactory.java:53) - model.nationality.NationalityFactory - SWISS
+2017-12-18 22:44:23,366 +0100 [main] DEBUG (NationalityFactory.java:88) - model.nationality.NationalityFactory - New nationality 'model.nationality.Swiss' created with coin 'chf' and language 'GERMAN'.
+2017-12-18 22:44:23,366 +0100 [main] INFO  (TestClass.java:54) - 1. Swiss: Hi, mein Name ist Zevon und mein Vermögen ist 123.57000000000001chf
+2017-12-18 22:44:23,366 +0100 [main] DEBUG (NationalityFactory.java:101) - model.nationality.NationalityFactory - Random chosen nationality is 'AMERICAN'
+2017-12-18 22:44:23,366 +0100 [main] DEBUG (NationalityFactory.java:53) - model.nationality.NationalityFactory - AMERICAN
+2017-12-18 22:44:23,366 +0100 [main] DEBUG (NationalityFactory.java:88) - model.nationality.NationalityFactory - New nationality 'model.nationality.American' created with coin 'usd' and language 'ENGLISH'.
+2017-12-18 22:44:23,366 +0100 [main] INFO  (TestClass.java:54) - 2. American: Hi, my name is Otis and my wealth is 131.774usd
+2017-12-18 22:44:23,366 +0100 [main] DEBUG (NationalityFactory.java:101) - model.nationality.NationalityFactory - Random chosen nationality is 'AMERICAN'
+2017-12-18 22:44:23,366 +0100 [main] DEBUG (NationalityFactory.java:53) - model.nationality.NationalityFactory - AMERICAN
+2017-12-18 22:44:23,366 +0100 [main] DEBUG (NationalityFactory.java:88) - model.nationality.NationalityFactory - New nationality 'model.nationality.American' created with coin 'usd' and language 'ENGLISH'.
+2017-12-18 22:44:23,366 +0100 [main] INFO  (TestClass.java:54) - 3. American: Hi, my name is Moses and my wealth is 131.774usd
+2017-12-18 22:44:23,366 +0100 [main] DEBUG (NationalityFactory.java:101) - model.nationality.NationalityFactory - Random chosen nationality is 'BELGIAN'
+2017-12-18 22:44:23,366 +0100 [main] DEBUG (NationalityFactory.java:53) - model.nationality.NationalityFactory - BELGIAN
+2017-12-18 22:44:23,366 +0100 [main] DEBUG (NationalityFactory.java:116) - model.nationality.NationalityFactory - New coin object created for 'eur' with value 1.0
+2017-12-18 22:44:23,366 +0100 [main] DEBUG (NationalityFactory.java:88) - model.nationality.NationalityFactory - New nationality 'model.nationality.Belgian' created with coin 'eur' and language 'DUTCH'.
+2017-12-18 22:44:23,366 +0100 [main] INFO  (TestClass.java:54) - 4. Belgian: Hallo, mijn naam is Hopper en mijn vermogen is 100.0eur
+2017-12-18 22:44:23,366 +0100 [main] DEBUG (NationalityFactory.java:101) - model.nationality.NationalityFactory - Random chosen nationality is 'BELGIAN'
+2017-12-18 22:44:23,366 +0100 [main] DEBUG (NationalityFactory.java:53) - model.nationality.NationalityFactory - BELGIAN
+2017-12-18 22:44:23,366 +0100 [main] DEBUG (NationalityFactory.java:88) - model.nationality.NationalityFactory - New nationality 'model.nationality.Belgian' created with coin 'eur' and language 'DUTCH'.
+2017-12-18 22:44:23,366 +0100 [main] INFO  (TestClass.java:54) - 5. Belgian: Hallo, mijn naam is Blade en mijn vermogen is 100.0eur
+2017-12-18 22:44:23,366 +0100 [main] DEBUG (NationalityFactory.java:101) - model.nationality.NationalityFactory - Random chosen nationality is 'NORWEGIAN'
+2017-12-18 22:44:23,366 +0100 [main] DEBUG (NationalityFactory.java:53) - model.nationality.NationalityFactory - NORWEGIAN
+2017-12-18 22:44:23,366 +0100 [main] DEBUG (NationalityFactory.java:88) - model.nationality.NationalityFactory - New nationality 'model.nationality.Norwegian' created with coin 'nok' and language 'NORWEGIAN'.
+2017-12-18 22:44:23,366 +0100 [main] INFO  (TestClass.java:54) - 6. Norwegian: Hei, jeg heter Wylie og rikdom er 801.57nok
+2017-12-18 22:44:23,366 +0100 [main] DEBUG (NationalityFactory.java:101) - model.nationality.NationalityFactory - Random chosen nationality is 'SWISS'
+2017-12-18 22:44:23,366 +0100 [main] DEBUG (NationalityFactory.java:53) - model.nationality.NationalityFactory - SWISS
+2017-12-18 22:44:23,366 +0100 [main] DEBUG (NationalityFactory.java:88) - model.nationality.NationalityFactory - New nationality 'model.nationality.Swiss' created with coin 'chf' and language 'GERMAN'.
+2017-12-18 22:44:23,366 +0100 [main] INFO  (TestClass.java:54) - 7. Swiss: Hi, mein Name ist Frankie und mein Vermögen ist 123.57000000000001chf
+2017-12-18 22:44:23,366 +0100 [main] DEBUG (NationalityFactory.java:101) - model.nationality.NationalityFactory - Random chosen nationality is 'BELGIAN'
+2017-12-18 22:44:23,366 +0100 [main] DEBUG (NationalityFactory.java:53) - model.nationality.NationalityFactory - BELGIAN
+2017-12-18 22:44:23,366 +0100 [main] DEBUG (NationalityFactory.java:88) - model.nationality.NationalityFactory - New nationality 'model.nationality.Belgian' created with coin 'eur' and language 'DUTCH'.
+2017-12-18 22:44:23,366 +0100 [main] INFO  (TestClass.java:54) - 8. Belgian: Hallo, mijn naam is Felix en mijn vermogen is 100.0eur
+2017-12-18 22:44:23,366 +0100 [main] DEBUG (NationalityFactory.java:101) - model.nationality.NationalityFactory - Random chosen nationality is 'NORWEGIAN'
+2017-12-18 22:44:23,382 +0100 [main] DEBUG (NationalityFactory.java:53) - model.nationality.NationalityFactory - NORWEGIAN
+2017-12-18 22:44:23,382 +0100 [main] DEBUG (NationalityFactory.java:88) - model.nationality.NationalityFactory - New nationality 'model.nationality.Norwegian' created with coin 'nok' and language 'NORWEGIAN'.
+2017-12-18 22:44:23,382 +0100 [main] INFO  (TestClass.java:54) - 9. Norwegian: Hei, jeg heter Booker og rikdom er 801.57nok
+2017-12-18 22:44:23,382 +0100 [main] DEBUG (NationalityFactory.java:101) - model.nationality.NationalityFactory - Random chosen nationality is 'NORWEGIAN'
+2017-12-18 22:44:23,382 +0100 [main] DEBUG (NationalityFactory.java:53) - model.nationality.NationalityFactory - NORWEGIAN
+2017-12-18 22:44:23,382 +0100 [main] DEBUG (NationalityFactory.java:88) - model.nationality.NationalityFactory - New nationality 'model.nationality.Norwegian' created with coin 'nok' and language 'NORWEGIAN'.
+2017-12-18 22:44:23,382 +0100 [main] INFO  (TestClass.java:54) - 10. Norwegian: Hei, jeg heter Zane og rikdom er 801.57nok
+2017-12-18 22:44:23,382 +0100 [main] INFO  (TestClass.java:61) - 
+
+Changing nationality for 1 random person:Felix
+2017-12-18 22:44:23,382 +0100 [main] INFO  (TestClass.java:62) - His current introduction: Belgian: Hallo, mijn naam is Felix en mijn vermogen is 100.0eur
+2017-12-18 22:44:23,383 +0100 [main] INFO  (TestClass.java:65) - Chosen nationality: AMERICAN
+2017-12-18 22:44:23,383 +0100 [main] DEBUG (NationalityFactory.java:53) - model.nationality.NationalityFactory - AMERICAN
+2017-12-18 22:44:23,383 +0100 [main] DEBUG (NationalityFactory.java:88) - model.nationality.NationalityFactory - New nationality 'model.nationality.American' created with coin 'usd' and language 'ENGLISH'.
+2017-12-18 22:44:23,383 +0100 [main] INFO  (TestClass.java:68) - American: Hi, my name is Felix and my wealth is 131.774usd
+2017-12-18 22:44:23,383 +0100 [main] INFO  (TestClass.java:65) - Chosen nationality: BELGIAN
+2017-12-18 22:44:23,383 +0100 [main] DEBUG (NationalityFactory.java:53) - model.nationality.NationalityFactory - BELGIAN
+2017-12-18 22:44:23,383 +0100 [main] DEBUG (NationalityFactory.java:88) - model.nationality.NationalityFactory - New nationality 'model.nationality.Belgian' created with coin 'eur' and language 'DUTCH'.
+2017-12-18 22:44:23,383 +0100 [main] INFO  (TestClass.java:68) - Belgian: Hallo, mijn naam is Felix en mijn vermogen is 100.0eur
+2017-12-18 22:44:23,383 +0100 [main] INFO  (TestClass.java:65) - Chosen nationality: ENGLISHMAN
+2017-12-18 22:44:23,383 +0100 [main] DEBUG (NationalityFactory.java:53) - model.nationality.NationalityFactory - ENGLISHMAN
+2017-12-18 22:44:23,384 +0100 [main] DEBUG (NationalityFactory.java:88) - model.nationality.NationalityFactory - New nationality 'model.nationality.Englishman' created with coin 'gbp' and language 'ENGLISH'.
+2017-12-18 22:44:23,384 +0100 [main] INFO  (TestClass.java:68) - Englishman: Hi, my name is Felix and my wealth is 84.306gbp
+2017-12-18 22:44:23,384 +0100 [main] INFO  (TestClass.java:65) - Chosen nationality: NORWEGIAN
+2017-12-18 22:44:23,384 +0100 [main] DEBUG (NationalityFactory.java:53) - model.nationality.NationalityFactory - NORWEGIAN
+2017-12-18 22:44:23,384 +0100 [main] DEBUG (NationalityFactory.java:88) - model.nationality.NationalityFactory - New nationality 'model.nationality.Norwegian' created with coin 'nok' and language 'NORWEGIAN'.
+2017-12-18 22:44:23,384 +0100 [main] INFO  (TestClass.java:68) - Norwegian: Hei, jeg heter Felix og rikdom er 801.57nok
+2017-12-18 22:44:23,384 +0100 [main] INFO  (TestClass.java:65) - Chosen nationality: SWISS
+2017-12-18 22:44:23,384 +0100 [main] DEBUG (NationalityFactory.java:53) - model.nationality.NationalityFactory - SWISS
+2017-12-18 22:44:23,384 +0100 [main] DEBUG (NationalityFactory.java:88) - model.nationality.NationalityFactory - New nationality 'model.nationality.Swiss' created with coin 'chf' and language 'GERMAN'.
+2017-12-18 22:44:23,384 +0100 [main] INFO  (TestClass.java:68) - Swiss: Hi, mein Name ist Felix und mein Vermögen ist 123.57000000000001chf
+2017-12-18 22:46:37,708 +0100 [main] INFO  (TestClass.java:39) - Loading the coins...
+2017-12-18 22:46:37,708 +0100 [main] DEBUG (CoinLoader.java:51) - model.properties.CoinLoader - Single object of this class was initialized.
+2017-12-18 22:46:37,708 +0100 [main] INFO  (CoinLoader.java:72) - model.properties.CoinLoader - Reading properties from 'E:\Google Drive\git\7-Munten\bin\model\properties\coins.properties'
+2017-12-18 22:46:37,708 +0100 [main] DEBUG (CoinLoader.java:114) - model.properties.CoinLoader - The properties file exists.
+2017-12-18 22:46:37,708 +0100 [main] DEBUG (CoinLoader.java:160) - model.properties.CoinLoader - Reading properties from file...
+2017-12-18 22:46:37,708 +0100 [main] DEBUG (CoinLoader.java:91) - model.properties.CoinLoader - Property 'gbp' not recognised as 'defaultCoin'
+2017-12-18 22:46:37,708 +0100 [main] INFO  (CoinLoader.java:100) - model.properties.CoinLoader - For property 'gbp' the value '0.84306' has been recognised.
+2017-12-18 22:46:37,708 +0100 [main] DEBUG (CoinLoader.java:91) - model.properties.CoinLoader - Property 'usd' not recognised as 'defaultCoin'
+2017-12-18 22:46:37,708 +0100 [main] INFO  (CoinLoader.java:100) - model.properties.CoinLoader - For property 'usd' the value '1.31774' has been recognised.
+2017-12-18 22:46:37,708 +0100 [main] DEBUG (CoinLoader.java:91) - model.properties.CoinLoader - Property 'nok' not recognised as 'defaultCoin'
+2017-12-18 22:46:37,708 +0100 [main] INFO  (CoinLoader.java:100) - model.properties.CoinLoader - For property 'nok' the value '8.0157' has been recognised.
+2017-12-18 22:46:37,708 +0100 [main] DEBUG (CoinLoader.java:91) - model.properties.CoinLoader - Property 'chf' not recognised as 'defaultCoin'
+2017-12-18 22:46:37,708 +0100 [main] INFO  (CoinLoader.java:100) - model.properties.CoinLoader - For property 'chf' the value '1.2357' has been recognised.
+2017-12-18 22:46:37,708 +0100 [main] DEBUG (CoinLoader.java:91) - model.properties.CoinLoader - Property 'sek' not recognised as 'defaultCoin'
+2017-12-18 22:46:37,708 +0100 [main] INFO  (CoinLoader.java:100) - model.properties.CoinLoader - For property 'sek' the value '8.7332' has been recognised.
+2017-12-18 22:46:37,708 +0100 [main] INFO  (CoinLoader.java:108) - model.properties.CoinLoader - No default coin found. Set 'eur' as default coin (from default settings).
+2017-12-18 22:46:37,708 +0100 [main] INFO  (TestClass.java:41) - Loading the nationalities...
+2017-12-18 22:46:37,723 +0100 [main] INFO  (TestClass.java:48) - 
+
+Loading the people... 
+Each person will be given a wealth of 100.0 default coins.
+2017-12-18 22:46:37,723 +0100 [main] DEBUG (CoinLoader.java:43) - model.properties.CoinLoader - Existing object of this class was returned
+2017-12-18 22:46:37,723 +0100 [main] DEBUG (TestClass.java:50) - The default coin is named 'eur' and has a value of '1.0'.
+2017-12-18 22:46:37,723 +0100 [main] DEBUG (NationalityFactory.java:101) - model.nationality.NationalityFactory - Random chosen nationality is 'ENGLISHMAN'
+2017-12-18 22:46:37,723 +0100 [main] DEBUG (NationalityFactory.java:53) - model.nationality.NationalityFactory - ENGLISHMAN
+2017-12-18 22:46:37,723 +0100 [main] DEBUG (NationalityFactory.java:88) - model.nationality.NationalityFactory - New nationality 'model.nationality.Englishman' created with coin 'gbp' and language 'ENGLISH'.
+2017-12-18 22:46:37,723 +0100 [main] INFO  (TestClass.java:54) - 1. Englishman: Hi, my name is Frankie and my wealth is 84.306gbp
+2017-12-18 22:46:37,723 +0100 [main] DEBUG (NationalityFactory.java:101) - model.nationality.NationalityFactory - Random chosen nationality is 'ENGLISHMAN'
+2017-12-18 22:46:37,723 +0100 [main] DEBUG (NationalityFactory.java:53) - model.nationality.NationalityFactory - ENGLISHMAN
+2017-12-18 22:46:37,723 +0100 [main] DEBUG (NationalityFactory.java:88) - model.nationality.NationalityFactory - New nationality 'model.nationality.Englishman' created with coin 'gbp' and language 'ENGLISH'.
+2017-12-18 22:46:37,723 +0100 [main] INFO  (TestClass.java:54) - 2. Englishman: Hi, my name is Cassius and my wealth is 84.306gbp
+2017-12-18 22:46:37,723 +0100 [main] DEBUG (NationalityFactory.java:101) - model.nationality.NationalityFactory - Random chosen nationality is 'NORWEGIAN'
+2017-12-18 22:46:37,723 +0100 [main] DEBUG (NationalityFactory.java:53) - model.nationality.NationalityFactory - NORWEGIAN
+2017-12-18 22:46:37,723 +0100 [main] DEBUG (NationalityFactory.java:88) - model.nationality.NationalityFactory - New nationality 'model.nationality.Norwegian' created with coin 'nok' and language 'NORWEGIAN'.
+2017-12-18 22:46:37,723 +0100 [main] INFO  (TestClass.java:54) - 3. Norwegian: Hei, jeg heter Bodhi og rikdom er 801.57nok
+2017-12-18 22:46:37,723 +0100 [main] DEBUG (NationalityFactory.java:101) - model.nationality.NationalityFactory - Random chosen nationality is 'SWISS'
+2017-12-18 22:46:37,723 +0100 [main] DEBUG (NationalityFactory.java:53) - model.nationality.NationalityFactory - SWISS
+2017-12-18 22:46:37,723 +0100 [main] DEBUG (NationalityFactory.java:88) - model.nationality.NationalityFactory - New nationality 'model.nationality.Swiss' created with coin 'chf' and language 'GERMAN'.
+2017-12-18 22:46:37,723 +0100 [main] INFO  (TestClass.java:54) - 4. Swiss: Hi, mein Name ist Leopold und mein Vermögen ist 123.57000000000001chf
+2017-12-18 22:46:37,723 +0100 [main] DEBUG (NationalityFactory.java:101) - model.nationality.NationalityFactory - Random chosen nationality is 'SWISS'
+2017-12-18 22:46:37,723 +0100 [main] DEBUG (NationalityFactory.java:53) - model.nationality.NationalityFactory - SWISS
+2017-12-18 22:46:37,723 +0100 [main] DEBUG (NationalityFactory.java:88) - model.nationality.NationalityFactory - New nationality 'model.nationality.Swiss' created with coin 'chf' and language 'GERMAN'.
+2017-12-18 22:46:37,723 +0100 [main] INFO  (TestClass.java:54) - 5. Swiss: Hi, mein Name ist Wolf und mein Vermögen ist 123.57000000000001chf
+2017-12-18 22:46:37,723 +0100 [main] DEBUG (NationalityFactory.java:101) - model.nationality.NationalityFactory - Random chosen nationality is 'ENGLISHMAN'
+2017-12-18 22:46:37,723 +0100 [main] DEBUG (NationalityFactory.java:53) - model.nationality.NationalityFactory - ENGLISHMAN
+2017-12-18 22:46:37,723 +0100 [main] DEBUG (NationalityFactory.java:88) - model.nationality.NationalityFactory - New nationality 'model.nationality.Englishman' created with coin 'gbp' and language 'ENGLISH'.
+2017-12-18 22:46:37,723 +0100 [main] INFO  (TestClass.java:54) - 6. Englishman: Hi, my name is Oz and my wealth is 84.306gbp
+2017-12-18 22:46:37,723 +0100 [main] DEBUG (NationalityFactory.java:101) - model.nationality.NationalityFactory - Random chosen nationality is 'ENGLISHMAN'
+2017-12-18 22:46:37,723 +0100 [main] DEBUG (NationalityFactory.java:53) - model.nationality.NationalityFactory - ENGLISHMAN
+2017-12-18 22:46:37,723 +0100 [main] DEBUG (NationalityFactory.java:88) - model.nationality.NationalityFactory - New nationality 'model.nationality.Englishman' created with coin 'gbp' and language 'ENGLISH'.
+2017-12-18 22:46:37,723 +0100 [main] INFO  (TestClass.java:54) - 7. Englishman: Hi, my name is Saint and my wealth is 84.306gbp
+2017-12-18 22:46:37,723 +0100 [main] DEBUG (NationalityFactory.java:101) - model.nationality.NationalityFactory - Random chosen nationality is 'SWISS'
+2017-12-18 22:46:37,723 +0100 [main] DEBUG (NationalityFactory.java:53) - model.nationality.NationalityFactory - SWISS
+2017-12-18 22:46:37,723 +0100 [main] DEBUG (NationalityFactory.java:88) - model.nationality.NationalityFactory - New nationality 'model.nationality.Swiss' created with coin 'chf' and language 'GERMAN'.
+2017-12-18 22:46:37,723 +0100 [main] INFO  (TestClass.java:54) - 8. Swiss: Hi, mein Name ist Zevon und mein Vermögen ist 123.57000000000001chf
+2017-12-18 22:46:37,723 +0100 [main] DEBUG (NationalityFactory.java:101) - model.nationality.NationalityFactory - Random chosen nationality is 'SWISS'
+2017-12-18 22:46:37,723 +0100 [main] DEBUG (NationalityFactory.java:53) - model.nationality.NationalityFactory - SWISS
+2017-12-18 22:46:37,723 +0100 [main] DEBUG (NationalityFactory.java:88) - model.nationality.NationalityFactory - New nationality 'model.nationality.Swiss' created with coin 'chf' and language 'GERMAN'.
+2017-12-18 22:46:37,723 +0100 [main] INFO  (TestClass.java:54) - 9. Swiss: Hi, mein Name ist Magnus und mein Vermögen ist 123.57000000000001chf
+2017-12-18 22:46:37,723 +0100 [main] DEBUG (NationalityFactory.java:101) - model.nationality.NationalityFactory - Random chosen nationality is 'SWISS'
+2017-12-18 22:46:37,723 +0100 [main] DEBUG (NationalityFactory.java:53) - model.nationality.NationalityFactory - SWISS
+2017-12-18 22:46:37,723 +0100 [main] DEBUG (NationalityFactory.java:88) - model.nationality.NationalityFactory - New nationality 'model.nationality.Swiss' created with coin 'chf' and language 'GERMAN'.
+2017-12-18 22:46:37,723 +0100 [main] INFO  (TestClass.java:54) - 10. Swiss: Hi, mein Name ist Dmitri und mein Vermögen ist 123.57000000000001chf
+2017-12-18 22:46:37,723 +0100 [main] INFO  (TestClass.java:61) - 
+
+Changing nationality for 1 random person:Saint
+2017-12-18 22:46:37,723 +0100 [main] INFO  (TestClass.java:62) - His current introduction: Englishman: Hi, my name is Saint and my wealth is 84.306gbp
+2017-12-18 22:46:37,723 +0100 [main] INFO  (TestClass.java:65) - Chosen nationality: AMERICAN
+2017-12-18 22:46:37,723 +0100 [main] DEBUG (NationalityFactory.java:53) - model.nationality.NationalityFactory - AMERICAN
+2017-12-18 22:46:37,723 +0100 [main] DEBUG (NationalityFactory.java:88) - model.nationality.NationalityFactory - New nationality 'model.nationality.American' created with coin 'usd' and language 'ENGLISH'.
+2017-12-18 22:46:37,723 +0100 [main] INFO  (TestClass.java:68) - American: Hi, my name is Saint and my wealth is 131.774usd
+2017-12-18 22:46:37,723 +0100 [main] INFO  (TestClass.java:65) - Chosen nationality: BELGIAN
+2017-12-18 22:46:37,723 +0100 [main] DEBUG (NationalityFactory.java:53) - model.nationality.NationalityFactory - BELGIAN
+2017-12-18 22:46:37,723 +0100 [main] DEBUG (NationalityFactory.java:116) - model.nationality.NationalityFactory - New coin object created for 'eur' with value 1.0
+2017-12-18 22:46:37,723 +0100 [main] DEBUG (NationalityFactory.java:88) - model.nationality.NationalityFactory - New nationality 'model.nationality.Belgian' created with coin 'eur' and language 'DUTCH'.
+2017-12-18 22:46:37,723 +0100 [main] INFO  (TestClass.java:68) - Belgian: Hallo, mijn naam is Saint en mijn vermogen is 100.0eur
+2017-12-18 22:46:37,723 +0100 [main] INFO  (TestClass.java:65) - Chosen nationality: ENGLISHMAN
+2017-12-18 22:46:37,723 +0100 [main] DEBUG (NationalityFactory.java:53) - model.nationality.NationalityFactory - ENGLISHMAN
+2017-12-18 22:46:37,723 +0100 [main] DEBUG (NationalityFactory.java:88) - model.nationality.NationalityFactory - New nationality 'model.nationality.Englishman' created with coin 'gbp' and language 'ENGLISH'.
+2017-12-18 22:46:37,723 +0100 [main] INFO  (TestClass.java:68) - Englishman: Hi, my name is Saint and my wealth is 84.306gbp
+2017-12-18 22:46:37,723 +0100 [main] INFO  (TestClass.java:65) - Chosen nationality: NORWEGIAN
+2017-12-18 22:46:37,723 +0100 [main] DEBUG (NationalityFactory.java:53) - model.nationality.NationalityFactory - NORWEGIAN
+2017-12-18 22:46:37,723 +0100 [main] DEBUG (NationalityFactory.java:88) - model.nationality.NationalityFactory - New nationality 'model.nationality.Norwegian' created with coin 'nok' and language 'NORWEGIAN'.
+2017-12-18 22:46:37,723 +0100 [main] INFO  (TestClass.java:68) - Norwegian: Hei, jeg heter Saint og rikdom er 801.57nok
+2017-12-18 22:46:37,723 +0100 [main] INFO  (TestClass.java:65) - Chosen nationality: SWISS
+2017-12-18 22:46:37,723 +0100 [main] DEBUG (NationalityFactory.java:53) - model.nationality.NationalityFactory - SWISS
+2017-12-18 22:46:37,723 +0100 [main] DEBUG (NationalityFactory.java:88) - model.nationality.NationalityFactory - New nationality 'model.nationality.Swiss' created with coin 'chf' and language 'GERMAN'.
+2017-12-18 22:46:37,723 +0100 [main] INFO  (TestClass.java:68) - Swiss: Hi, mein Name ist Saint und mein Vermögen ist 123.57000000000001chf

@@ -1,11 +1,6 @@
 package model.nationality;
 
-import java.util.HashMap;
 import java.util.HashSet;
-
-import javax.print.attribute.standard.RequestingUserName;
-import javax.swing.RootPaneContainer;
-import javax.xml.ws.AsyncHandler;
 
 import org.apache.log4j.Logger;
 
@@ -115,6 +110,7 @@ public class NationalityFactory {
 		Coin newCoin = new Coin(coinName, DefaultSettings.OTHER_COINS_DEFAULT_VALUE);
 		logger.debug(className + "New coin object created for '" + newCoin.getName() + "' with value " + newCoin.getValuePerDefaultCoin());
 		
+		// NewCoin is added to the coinsKnownAndInUse list, so we can find the same object again in the future for the same string.
 		coinsKnownAndInUse.add(newCoin);		
 		return newCoin;
 	}
