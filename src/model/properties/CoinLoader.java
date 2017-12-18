@@ -75,19 +75,19 @@ public class CoinLoader {
 
 		Properties properties = loadProperties(file);
 		
-		boolean first = true;
+		boolean defaultCoinNotFound = true;
 		for (String key : properties.stringPropertyNames()) 
 		{
 			String value = properties.getProperty(key);
 			
-			if (first && key.toLowerCase().equals(DefaultSettings.DEFAULTCOIN_NAME.toLowerCase())) 
+			if (defaultCoinNotFound && key.toLowerCase().equals(DefaultSettings.DEFAULTCOIN_NAME.toLowerCase())) 
 			{
 				defaultCoin = new Coin(value, 1);
-				first = false;
+				defaultCoinNotFound = false;
 				logger.info(className + "Default coin set to '" + value +"'");
 				continue;
 			}
-			if (first)
+			if (defaultCoinNotFound)
 				logger.debug(className + "Property '" + key + "' not recognised as '" + DefaultSettings.DEFAULTCOIN_NAME + "'");
 			
 			Double number = TryParseDouble(value);	
@@ -100,6 +100,9 @@ public class CoinLoader {
 			logger.info(className + "For property '" + key + "' the value '" + number + "' has been recognised.");
 			coins.add(new Coin(key, number));
 		}
+		
+		if (defaultCoinNotFound)
+			defaultCoin = new Coin(DefaultCoins.defaultCoin.getValue(), 1);
 	}
 	
 	private boolean ensureFileExists(File file) 
