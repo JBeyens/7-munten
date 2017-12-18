@@ -101,8 +101,11 @@ public class CoinLoader {
 			coins.add(new Coin(key, number));
 		}
 		
-		if (defaultCoinNotFound)
-			defaultCoin = new Coin(DefaultCoins.defaultCoin.getValue(), 1);
+		if (!defaultCoinNotFound)
+			return;
+		
+		defaultCoin = new Coin(DefaultCoins.defaultCoin.getValue(), 1);
+		logger.info(className + "No default coin found. Setting '" + defaultCoin.getName() + "' as default coin (from default settings).");
 	}
 	
 	private boolean ensureFileExists(File file) 
