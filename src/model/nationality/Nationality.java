@@ -2,13 +2,17 @@ package model.nationality;
 
 import model.Coin;
 import model.Person;
+import model.language.LanguageToSpeech;
+import model.language.Language;
 
-public abstract class Nationality {
+public class Nationality {
 	private Coin coin;
+	private LanguageToSpeech languageToSpeach;
 
-	public Nationality(Coin nationalCoin)
+	public Nationality(Coin nationalCoin, Language language)
 	{
 		this.coin = nationalCoin;
+		languageToSpeach = new LanguageToSpeech(language);
 	}
 	
 	public Coin getCoin()

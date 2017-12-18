@@ -3,7 +3,7 @@ package model.nationality;
 import test.Utility;
 
 // Enum of possible nationalities
-public enum NationalitiesEnum 
+public enum Nationalities 
 {
 	AMERICAN, 
 	BELGIAN, 
@@ -15,7 +15,7 @@ public enum NationalitiesEnum
 	 * Pick a random vlaue of the Nationalities enum.
 	 * @return a random Nationality
 	 **/
-	public static NationalitiesEnum getRandomNationality()
+	public static Nationalities getRandomNationality()
 	{
 		return values()[Utility.RANDOM.nextInt(values().length)];
 	}

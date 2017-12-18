@@ -9,7 +9,7 @@ import org.apache.log4j.xml.DOMConfigurator;
 
 import model.Coin;
 import model.Person;
-import model.nationality.NationalitiesEnum;
+import model.nationality.Nationalities;
 import model.nationality.Nationality;
 import model.nationality.NationalityFactory;
 import model.properties.CoinLoader;
@@ -61,7 +61,7 @@ public class TestClass {
 		logger.info("\n\nChanging nationality for 1 random person:" + person.getName());
 		logger.info("His current introduction: " + person.toString());
 		
-		for (NationalitiesEnum nationality : NationalitiesEnum.values()) {
+		for (Nationalities nationality : Nationalities.values()) {
 			logger.info("Chosen nationality: " + nationality.toString());
 			Nationality newNationality = nationalityFactory.getNationality(nationality);
 			person.setNationality(newNationality);

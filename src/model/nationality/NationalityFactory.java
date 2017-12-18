@@ -10,16 +10,16 @@ import model.properties.DefaultSettings;
 
 public class NationalityFactory {
 	// FIELDS
-	private HashMap<NationalitiesEnum, Nationality> nationalityDictionary;
+	private HashMap<Nationalities, Nationality> nationalityDictionary;
 	private final static Logger logger = Logger.getLogger("Log");
 	private static String className = "";
 	
 	public NationalityFactory(HashSet<Coin> coins)
 	{
 		className = this.getClass().getName() + " - ";
-		nationalityDictionary = new HashMap<NationalitiesEnum, Nationality>();
+		nationalityDictionary = new HashMap<Nationalities, Nationality>();
 		logger.debug(className + "Running over Enum of nationalities");
-		for (NationalitiesEnum nationality : NationalitiesEnum.values()) 
+		for (Nationalities nationality : Nationalities.values()) 
 		{
 			logger.debug(className + nationality);
 			switch(nationality) 
@@ -46,7 +46,7 @@ public class NationalityFactory {
 		}
 	}
 	
-	public Nationality getNationality(NationalitiesEnum nationality)
+	public Nationality getNationality(Nationalities nationality)
 	{
 		return nationalityDictionary.get(nationality);
 	}
@@ -54,7 +54,7 @@ public class NationalityFactory {
 	// Gets a random nationality by picking a random value from the enumeration
 	public Nationality getRandomNationality()
 	{
-		NationalitiesEnum randomNationality = NationalitiesEnum.getRandomNationality();
+		Nationalities randomNationality = Nationalities.getRandomNationality();
 		logger.debug(className + "Random chosen nationality is '" + randomNationality + "'");
 		return getNationality(randomNationality);
 	}
