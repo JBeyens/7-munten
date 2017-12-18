@@ -3,7 +3,7 @@ package model.properties;
 import org.apache.log4j.Level;
 
 /**
- * 	@Author Ben Vandevorst & Jef Beyens
+ * 	@Author Jef Beyens & Ben Vandevorst
 	@Datum 15/12/2017
 	@Project Munten
 	@Doel Holding literal strings
