@@ -118,23 +118,25 @@ public class CoinLoader {
 				file.getParentFile().mkdirs();
 			}
 
-			logger.info(className + "Creating a new properties file.");
+			logger.info(className + "Creating a new properties file...");
 			file.createNewFile();
 			
 
-			// Fill in the properties file:
-			PrintWriter pw = new PrintWriter(out);
+			logger.info(className + "Loading default properties...");
 			Properties properties = new Properties();
+			for (DefaultCoins setting : DefaultCoins.values()) {
+				logger.info(className + " => " + setting.toString() + " = " + setting.getValue());
+				properties.setProperty(setting.toString(), setting.getValue());
+			}
 			
-			logger.info(className + "=> " + DefaultSettings.DEFAULTCOIN_NAME + " = " + DefaultSettings.DEFAULTCOIN + DefaultSettings.DEFAULTCOIN_ADVISE);
-			logger.info(className + "=> " + DefaultSettings.OTHER_COIN1 + " = " + DefaultSettings.OTHER_COIN1_VALUE + DefaultSettings.OTHER_COINS_ADVISE);
-			logger.debug(className + "Properties file: writing properties to file");
-			properties.setProperty(DefaultSettings.DEFAULTCOIN_NAME, DefaultSettings.DEFAULTCOIN);
-			properties.setProperty(DefaultSettings.OTHER_COIN1, DefaultSettings.OTHER_COIN1_VALUE);
+			logger.info(className + "Writing properties to file...");
 			properties.store(out, null);
-			logger.debug(className + "Properties file: writing advise to file");
+			
+			logger.info(className + "Writing extra advise to file...");
+			PrintWriter pw = new PrintWriter(out);
 			pw.println(DefaultSettings.DEFAULTCOIN_ADVISE);
 			pw.println(DefaultSettings.OTHER_COINS_ADVISE);
+			
 			pw.close(); out.close();
 			
 			return true;
