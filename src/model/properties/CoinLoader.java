@@ -9,10 +9,12 @@ import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.util.HashSet;
 import java.util.Properties;
+import model.properties.DefaultSettings;
 
 import org.apache.log4j.Logger;
 
 import model.Coin;
+
 
 /**
  * @Author Jef Beyens & Ben Vandevorst
@@ -123,6 +125,7 @@ public class CoinLoader {
 			// Fill in the properties file:
 			PrintWriter pw = new PrintWriter(out);
 			Properties properties = new Properties();
+			
 			logger.info(className + "=> " + DefaultSettings.DEFAULTCOIN_NAME + " = " + DefaultSettings.DEFAULTCOIN + DefaultSettings.DEFAULTCOIN_ADVISE);
 			logger.info(className + "=> " + DefaultSettings.OTHER_COIN1 + " = " + DefaultSettings.OTHER_COIN1_VALUE + DefaultSettings.OTHER_COINS_ADVISE);
 			logger.debug(className + "Properties file: writing properties to file");
