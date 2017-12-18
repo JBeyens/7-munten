@@ -7,7 +7,7 @@ package model.properties;
  */
 public enum DefaultCoins
 {
-	defaultCoin("btc"),
+	defaultCoin("eur"),
 	usd("1.31774"),
 	gbp("0.84306"),
 	nok("8.0157"),
