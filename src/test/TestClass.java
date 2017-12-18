@@ -39,7 +39,7 @@ public class TestClass {
 		logger.info("Loading the coins...");
 		HashSet<Coin> coinCollection = CoinLoader.getInstance().getCoins();
 		logger.info("Loading the nationalities...");
-		nationalityFactory = new NationalityFactory(coinCollection);
+		nationalityFactory = NationalityFactory.getInstance(coinCollection);
 	}
 	
 	private static void loadPeople() {
