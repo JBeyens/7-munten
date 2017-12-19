@@ -2,12 +2,14 @@ package unittests;
 
 import static org.junit.Assert.*;
 
+import java.io.File;
 import java.util.HashSet;
 import java.util.Properties;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.xml.DOMConfigurator;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -21,6 +23,7 @@ public class CoinLoaderTest {
 	private HashSet<Coin> coinCollection;
 	private final String unfoundCoinName = "UnfoundCoin";
 	private final double unfoundCoinValue = 1.01;
+	private String path;
 	
 	private static Logger logger = Logger.getLogger("Log");
 	
@@ -35,8 +38,8 @@ public class CoinLoaderTest {
 	@Test
 	public void test_Reading_Properties_From_Coin_File_Not_Found() {
 		// Executing CoinLoader:
-		String newPath = "bin/model/properties/" + Utility.RANDOM.nextLong() + ".txt";
-		coinLoader = CoinLoader.getInstance(newPath);
+		path = "bin/model/properties/" + Utility.RANDOM.nextLong() + ".txt";
+		coinLoader = CoinLoader.getInstance(path);
 		coinCollection = coinLoader.getCoins();
 		
 		// Loading default coin values:
@@ -71,5 +74,12 @@ public class CoinLoaderTest {
 		}
 		
 		return new Coin(unfoundCoinName, unfoundCoinValue);
+	}
+
+	@After
+	public void TearDown() 
+	{	
+		File file = new File(path);
+		file.delete();
 	}
 }
