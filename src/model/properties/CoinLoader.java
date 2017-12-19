@@ -37,7 +37,9 @@ public class CoinLoader {
 	}
 		
 	/* Returns the single instance of this class */
-	public static CoinLoader getInstance()
+	public static CoinLoader getInstance() {
+		return getInstance(null); 	}
+		public static CoinLoader getInstance(String path)
 	{		
 		if (objectOfThisClass != null) {
 			logger.debug(className + "Existing object of this class was returned");
@@ -50,7 +52,7 @@ public class CoinLoader {
 		className = objectOfThisClass.getClass().getName() + " - ";
 		logger.debug(className + "Single object of this class was initialized.");
 		
-		objectOfThisClass.loadCoins();		
+		objectOfThisClass.loadCoins(path);		
 		return objectOfThisClass;		
 	}
 	
@@ -58,7 +60,7 @@ public class CoinLoader {
 		if (objectOfThisClass == null) {
 			logger.debug("Creating new instance of 'CoinLoader' class.");
 			objectOfThisClass = new CoinLoader();
-			objectOfThisClass.loadCoins();
+			objectOfThisClass.loadCoins(null);
 		}
 		return coins;
 	}
@@ -67,8 +69,9 @@ public class CoinLoader {
 	} 
 
 	/* Method to get properties from a file. */
-	private void loadCoins() {		
-		File file = new File(DefaultSettings.PROPERTIES_PATH);
+	private void loadCoins(String path) {	
+		path = path == null ? DefaultSettings.PROPERTIES_PATH : path;
+		File file = new File(path);
 		logger.info(className + "Reading properties from '" + file.getAbsolutePath() + "'");
 
 		ensureFileExists(file);

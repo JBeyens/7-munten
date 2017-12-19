@@ -2,36 +2,25 @@ package unittests;
 
 import static org.junit.Assert.*;
 
-import java.io.OutputStream;
-import java.lang.reflect.Field;
-import java.lang.reflect.Modifier;
 import java.util.HashSet;
+import java.util.Properties;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.xml.DOMConfigurator;
-import org.junit.After;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.powermock.core.classloader.annotations.PrepareForTest;
-import org.powermock.core.classloader.annotations.SuppressStaticInitializationFor;
-import org.powermock.modules.junit4.PowerMockRunner;
-import org.powermock.reflect.Whitebox;
 
 import model.Coin;
 import model.properties.CoinLoader;
-import model.properties.DefaultSettings;
+import model.properties.DefaultCoins;
 import test.Utility;
 
-@RunWith(PowerMockRunner.class)
-@PrepareForTest()
 public class CoinLoaderTest {
-	private Field defaultPathField;
-	private OutputStream outputStream;
 	private CoinLoader coinLoader;
 	private HashSet<Coin> coinCollection;
+	private final String unfoundCoinName = "UnfoundCoin";
+	private final double unfoundCoinValue = 1.01;
 	
 	private static Logger logger = Logger.getLogger("Log");
 	
@@ -41,45 +30,46 @@ public class CoinLoaderTest {
 		DOMConfigurator.configure("log4j.xml");		
 		// Set log4j level to log
 		logger.setLevel(Level.ALL);
-		
-		// See https://stackoverflow.com/questions/23162520/powermock-mock-out-private-static-final-variable-a-concrete-example
-		// This site explains how to do mocking (use fake values & methods)
-		/* junit: 4.12
-		 * powermock-api-mockito: 1.6.1
-		 * powermock-module-junit4: 1.6.1
-		 * */
-		String newPath = "bin/model/properties/" + Utility.RANDOM.nextLong() + ".txt";
-	      try {
-	          setFinalStatic(DefaultSettings.class.getDeclaredField("PROPERTIES_PATH"), String.valueOf(newPath));
-	        } 
-	        catch (SecurityException e) {fail();}
-	        catch (NoSuchFieldException e) {fail();}
-	        catch (Exception e) {fail();}
-
-		// CoinLoader should be deleted, 
-		coinLoader = CoinLoader.getInstance();
-		coinCollection = new HashSet<Coin>();
-		coinCollection.add(new Coin("usd", 1.31774));
-		coinCollection.add(new Coin("gbp", 0.84306));
-		coinCollection.add(new Coin("nok", 8.0157));
-		coinCollection.add(new Coin("sek", 8.7332));
-		coinCollection.add(new Coin("chf", 1.2357));
 	}
-
-    static void setFinalStatic(Field field, Object newValue) throws Exception {
-        field.setAccessible(true);
-        // remove final modifier from field
-        Field modifiersField = Field.class.getDeclaredField("modifiers");
-        modifiersField.setAccessible(true);
-        modifiersField.setInt(field, field.getModifiers() & ~Modifier.FINAL);
-        field.set(null, newValue);
-    }
 	
 	@Test
 	public void test_Reading_Properties_From_Coin_File() {
-		HashSet<Coin> collection = CoinLoader.getInstance().getCoins();
+		// Executing CoinLoader:
+		String newPath = "bin/model/properties/" + Utility.RANDOM.nextLong() + ".txt";
+		coinLoader = CoinLoader.getInstance(newPath);
+		coinCollection = coinLoader.getCoins();
 		
-		assertTrue(coinCollection.equals(collection));
+		// Loading default coin values:
+		logger.info("Loading default properties...");
+		Properties properties = new Properties();
+		for (DefaultCoins setting : DefaultCoins.values()) {
+			logger.info(" => " + setting.toString() + " = " + setting.getValue());
+			properties.setProperty(setting.toString(), setting.getValue());
+		}
+		
+		
+		// Comparing:
+		for (String key : properties.stringPropertyNames()) {
+			if (key.equals("defaultCoin")) {
+				logger.info("Default coin will be skipped (key = '" + key + "')");
+				continue;
+			}
+			
+			logger.info("For key:  " + key);
+			Coin result = findCoinInCoinCollection(key);
+			logger.info("- Coin found: " + result.getName() + ", " + result.getValuePerDefaultCoin());
+			logger.info("- Property found: " + key + ", " + properties.getProperty(key));
+			assertTrue(Double.toString(result.getValuePerDefaultCoin()).equals(properties.getProperty(key)));
+		}
 	}
-
+	
+	private Coin findCoinInCoinCollection(String name)
+	{
+		for (Coin coin : coinCollection) {
+			if (coin.getName().equals(name))
+				return coin;
+		}
+		
+		return new Coin(unfoundCoinName, unfoundCoinValue);
+	}
 }
