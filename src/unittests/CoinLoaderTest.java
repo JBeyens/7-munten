@@ -33,7 +33,7 @@ public class CoinLoaderTest {
 	}
 	
 	@Test
-	public void test_Reading_Properties_From_Coin_File() {
+	public void test_Reading_Properties_From_Coin_File_Not_Found() {
 		// Executing CoinLoader:
 		String newPath = "bin/model/properties/" + Utility.RANDOM.nextLong() + ".txt";
 		coinLoader = CoinLoader.getInstance(newPath);
