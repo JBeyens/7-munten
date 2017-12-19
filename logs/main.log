@@ -1334,3 +1334,48 @@ Changing nationality for 1 random person:Zeke
 2017-12-19 01:13:40,019 +0100 [main] INFO  (CoinLoaderTest.java:64) - For key:  sek
 2017-12-19 01:13:40,019 +0100 [main] INFO  (CoinLoaderTest.java:66) - - Coin found: sek, 8.7332
 2017-12-19 01:13:40,019 +0100 [main] INFO  (CoinLoaderTest.java:67) - - Property found: sek, 8.7332
+2017-12-19 01:17:27,710 +0100 [main] DEBUG (CoinLoader.java:53) - model.properties.CoinLoader - Single object of this class was initialized.
+2017-12-19 01:17:27,712 +0100 [main] INFO  (CoinLoader.java:75) - model.properties.CoinLoader - Reading properties from 'E:\Google Drive\git\7-Munten\bin\model\properties\-8944584779942944891.txt'
+2017-12-19 01:17:27,712 +0100 [main] WARN  (CoinLoader.java:121) - model.properties.CoinLoader - Properties file does not exist. Creating file...
+2017-12-19 01:17:27,714 +0100 [main] DEBUG (CoinLoader.java:126) - model.properties.CoinLoader - Ensuring the directory exists or is created if necessary (based on absolute path).
+2017-12-19 01:17:27,714 +0100 [main] INFO  (CoinLoader.java:130) - model.properties.CoinLoader - Creating a new properties file...
+2017-12-19 01:17:27,715 +0100 [main] INFO  (CoinLoader.java:134) - model.properties.CoinLoader - Loading default properties...
+2017-12-19 01:17:27,715 +0100 [main] INFO  (CoinLoader.java:137) - model.properties.CoinLoader -  => defaultCoin = eur
+2017-12-19 01:17:27,716 +0100 [main] INFO  (CoinLoader.java:137) - model.properties.CoinLoader -  => usd = 1.31774
+2017-12-19 01:17:27,716 +0100 [main] INFO  (CoinLoader.java:137) - model.properties.CoinLoader -  => gbp = 0.84306
+2017-12-19 01:17:27,716 +0100 [main] INFO  (CoinLoader.java:137) - model.properties.CoinLoader -  => nok = 8.0157
+2017-12-19 01:17:27,716 +0100 [main] INFO  (CoinLoader.java:137) - model.properties.CoinLoader -  => sek = 8.7332
+2017-12-19 01:17:27,716 +0100 [main] INFO  (CoinLoader.java:137) - model.properties.CoinLoader -  => chf = 1.2357
+2017-12-19 01:17:27,717 +0100 [main] INFO  (CoinLoader.java:141) - model.properties.CoinLoader - Writing properties to file...
+2017-12-19 01:17:27,719 +0100 [main] INFO  (CoinLoader.java:144) - model.properties.CoinLoader - Writing extra advise to file...
+2017-12-19 01:17:27,724 +0100 [main] DEBUG (CoinLoader.java:163) - model.properties.CoinLoader - Reading properties from file...
+2017-12-19 01:17:27,724 +0100 [main] DEBUG (CoinLoader.java:94) - model.properties.CoinLoader - Property 'gbp' not recognised as 'defaultCoin'
+2017-12-19 01:17:27,726 +0100 [main] INFO  (CoinLoader.java:103) - model.properties.CoinLoader - For property 'gbp' the value '0.84306' has been recognised.
+2017-12-19 01:17:27,726 +0100 [main] INFO  (CoinLoader.java:90) - model.properties.CoinLoader - Default coin set to 'eur'
+2017-12-19 01:17:27,727 +0100 [main] INFO  (CoinLoader.java:103) - model.properties.CoinLoader - For property 'usd' the value '1.31774' has been recognised.
+2017-12-19 01:17:27,727 +0100 [main] INFO  (CoinLoader.java:103) - model.properties.CoinLoader - For property 'nok' the value '8.0157' has been recognised.
+2017-12-19 01:17:27,727 +0100 [main] INFO  (CoinLoader.java:103) - model.properties.CoinLoader - For property 'chf' the value '1.2357' has been recognised.
+2017-12-19 01:17:27,727 +0100 [main] INFO  (CoinLoader.java:103) - model.properties.CoinLoader - For property 'sek' the value '8.7332' has been recognised.
+2017-12-19 01:17:27,727 +0100 [main] INFO  (CoinLoaderTest.java:46) - Loading default properties...
+2017-12-19 01:17:27,727 +0100 [main] INFO  (CoinLoaderTest.java:49) -  => defaultCoin = eur
+2017-12-19 01:17:27,727 +0100 [main] INFO  (CoinLoaderTest.java:49) -  => usd = 1.31774
+2017-12-19 01:17:27,727 +0100 [main] INFO  (CoinLoaderTest.java:49) -  => gbp = 0.84306
+2017-12-19 01:17:27,727 +0100 [main] INFO  (CoinLoaderTest.java:49) -  => nok = 8.0157
+2017-12-19 01:17:27,728 +0100 [main] INFO  (CoinLoaderTest.java:49) -  => sek = 8.7332
+2017-12-19 01:17:27,728 +0100 [main] INFO  (CoinLoaderTest.java:49) -  => chf = 1.2357
+2017-12-19 01:17:27,728 +0100 [main] INFO  (CoinLoaderTest.java:57) - Default coin will be skipped (key = 'defaultCoin')
+2017-12-19 01:17:27,728 +0100 [main] INFO  (CoinLoaderTest.java:61) - For key:  gbp
+2017-12-19 01:17:27,728 +0100 [main] INFO  (CoinLoaderTest.java:63) - - Coin found: gbp, 0.84306
+2017-12-19 01:17:27,729 +0100 [main] INFO  (CoinLoaderTest.java:64) - - Property found: gbp, 0.84306
+2017-12-19 01:17:27,729 +0100 [main] INFO  (CoinLoaderTest.java:61) - For key:  usd
+2017-12-19 01:17:27,729 +0100 [main] INFO  (CoinLoaderTest.java:63) - - Coin found: usd, 1.31774
+2017-12-19 01:17:27,729 +0100 [main] INFO  (CoinLoaderTest.java:64) - - Property found: usd, 1.31774
+2017-12-19 01:17:27,729 +0100 [main] INFO  (CoinLoaderTest.java:61) - For key:  nok
+2017-12-19 01:17:27,729 +0100 [main] INFO  (CoinLoaderTest.java:63) - - Coin found: nok, 8.0157
+2017-12-19 01:17:27,729 +0100 [main] INFO  (CoinLoaderTest.java:64) - - Property found: nok, 8.0157
+2017-12-19 01:17:27,729 +0100 [main] INFO  (CoinLoaderTest.java:61) - For key:  chf
+2017-12-19 01:17:27,729 +0100 [main] INFO  (CoinLoaderTest.java:63) - - Coin found: chf, 1.2357
+2017-12-19 01:17:27,729 +0100 [main] INFO  (CoinLoaderTest.java:64) - - Property found: chf, 1.2357
+2017-12-19 01:17:27,730 +0100 [main] INFO  (CoinLoaderTest.java:61) - For key:  sek
+2017-12-19 01:17:27,730 +0100 [main] INFO  (CoinLoaderTest.java:63) - - Coin found: sek, 8.7332
+2017-12-19 01:17:27,730 +0100 [main] INFO  (CoinLoaderTest.java:64) - - Property found: sek, 8.7332
